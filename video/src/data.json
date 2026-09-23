@@ -1,0 +1,111 @@
+{
+ "episodes": 95,
+ "places": 91,
+ "zaps": [
+  {
+   "thumb": "t-8mPe5RuKQfs.webp",
+   "score": 9.3,
+   "name": "Shawarma Bar"
+  },
+  {
+   "thumb": "t-7B3U-80p2Pc.webp",
+   "score": 7.7,
+   "name": "Uludag Kebab"
+  },
+  {
+   "thumb": "t-RbgjHPobAbQ.webp",
+   "score": 9.2,
+   "name": "Maroosh"
+  },
+  {
+   "thumb": "t-7fRk_NTQ3ms.webp",
+   "score": 6.8,
+   "name": "Afandi Kebab"
+  },
+  {
+   "thumb": "t-iZGsCa_SrlE.webp",
+   "score": 8.4,
+   "name": "Sheik Shawarma"
+  },
+  {
+   "thumb": "t-C0PxS1fpcD0.webp",
+   "score": 7.4,
+   "name": "Kebaba"
+  },
+  {
+   "thumb": "t-5yQGblW5pls.webp",
+   "score": 7.9,
+   "name": "Falafelkælderen"
+  },
+  {
+   "thumb": "t-zHrlzESrlGs.webp",
+   "score": 8.3,
+   "name": "Boy's"
+  },
+  {
+   "thumb": "t-KgRGS7LZsdo.webp",
+   "score": 6.5,
+   "name": "Vores Kebab"
+  },
+  {
+   "thumb": "t-oBInkxrL6js.webp",
+   "score": 6.6,
+   "name": "Kebab & Pølsevogn"
+  },
+  {
+   "thumb": "t-Ex_dWRX9ksE.webp",
+   "score": 8.1,
+   "name": "Ankara Durüm House"
+  },
+  {
+   "thumb": "t-D35sqUKraio.webp",
+   "score": 8.6,
+   "name": "Star Midnight"
+  },
+  {
+   "thumb": "t-aJnxB37wWJk.webp",
+   "score": 6.1,
+   "name": "Kebabistan"
+  },
+  {
+   "thumb": "t-BIOT13pmlEg.webp",
+   "score": 7.7,
+   "name": "Vefa Kebab"
+  }
+ ],
+ "top3": [
+  {
+   "thumb": "t-H1rvTGJu0mY.webp",
+   "score": 10.0,
+   "name": "Shaku Maku",
+   "sub": "Nørrebrogade 46, 2200 København N",
+   "verdict": "En unik irakisk madoplevelse og fantastisk gæstfrihed, der er udenfor bedømmelse."
+  },
+  {
+   "thumb": "t-qSNjrQirLoU.webp",
+   "score": 9.3,
+   "name": "Maroosh",
+   "sub": "Nørrebrogade",
+   "verdict": "En helt forrygende kyllinge-shawarma der smager hjernedødt godt."
+  },
+  {
+   "thumb": "t-OZe8Tombtn0.webp",
+   "score": 9.3,
+   "name": "Zeyno's",
+   "sub": "Frederikssundsvej 175, Brønshøj",
+   "verdict": "Zeyno's lever op til hypen, kæmpe anbefaling, det slår alt."
+  }
+ ],
+ "hitlistSize": [
+  1082,
+  12000
+ ],
+ "mapSize": [
+  1689,
+  1221
+ ],
+ "mapMobileSize": [
+  1082,
+  1296
+ ]
+}

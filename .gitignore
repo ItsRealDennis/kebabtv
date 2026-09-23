@@ -9,3 +9,5 @@ assets-source/
 site/public/maplibre/
 site/.astro/
 *.log
+video/node_modules/
+video/out/

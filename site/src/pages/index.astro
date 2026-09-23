@@ -376,6 +376,10 @@ const first = chans[0];
     .meet { padding-top: 40px; }
     .meet__text h2 { font-size: 2.4rem; }
     .meet__text p { font-size: 1.05rem; }
+    .meet__sticker { display: none; }   /* half-clipped sticker reads as a bug on small screens */
+    .meet { overflow: visible; padding-bottom: 8px; }
+    .meet__cta { display: block; margin-top: 16px; }
+    .meet__cta img { width: min(100%, 360px); }
 
     .guide { padding-top: 40px; }
     .guide__h { font-size: 2.6rem; margin-bottom: 12px; }
