@@ -1,0 +1,174 @@
+---
+import Base from "../layouts/Base.astro";
+import { places, videoById, fmtScore, fmtDate, scoreColor, scoreInk, isDumDurum } from "../lib/data";
+
+const rows = places.map((p) => {
+  const v = videoById.get(p.latest)!;
+  const viewers = v?.viewers;
+  // "Uenighed": hosts loved it but comments are negative, or the other way round.
+  const hostPos = p.score == null ? null : (p.score - 5) / 5;               // -1..1
+  const crowdPos = viewers ? (viewers.positive_pct - viewers.negative_pct) / 100 : null;
+  const gap = hostPos != null && crowdPos != null ? Math.abs(hostPos - crowdPos) : -1;
+  return {
+    ...p, v, gap,
+    price: p.prices.length ? Math.min(...p.prices) : null,
+    date: v?.date ?? "",
+    dish: v?.review.dish ?? "",
+    verdict: v?.review.verdict_short ?? "",
+    search: [p.name, p.area, p.city, p.address, v?.review.dish, v?.review.summary, ...(v?.review.pros ?? []), ...(v?.review.cons ?? []),
+      ...(v?.review.quotes ?? []).map((q) => q.text)].filter(Boolean).join(" ").toLowerCase(),
+  };
+});
+const ranked = [...rows].sort((a, b) => (b.score ?? -1) - (a.score ?? -1));
+---
+<Base title="Hitlisten" channel={2}>
+  <section class="wrap head">
+    <div class="titlerow">
+      <h1 class="shout">Hitlisten</h1>
+      <img class="badge" src="/assets/badge-bedste.webp" alt="" width="170" height="163" />
+    </div>
+    <p class="lede">Alle steder KebabTV har anmeldt, med deres egen karakter omregnet til en skala fra 0 til 10. Har de været der flere gange, er det gennemsnittet.</p>
+    <div class="chips" role="group" aria-label="Hurtige filtre">
+      <button type="button" class="chip" data-chip="billig" aria-pressed="false"><img src="/assets/chip-billig.webp" alt="Billig" width="150" height="81" /></button>
+      <button type="button" class="chip" data-chip="staerk" aria-pressed="false"><img src="/assets/chip-staerk.webp" alt="Stærk" width="150" height="79" /></button>
+      <button type="button" class="chip" data-chip="dd" aria-pressed="false"><img src="/assets/chip-dum-durum.webp" alt="Dum dürüm, over 8" width="150" height="97" /></button>
+      <button type="button" class="chip" data-chip="veg" aria-pressed="false"><img src="/assets/chip-vegetar.webp" alt="Vegetar" width="150" height="65" /></button>
+      <a class="chip" href="/kortet#naer"><img src="/assets/chip-naer.webp" alt="Tæt på mig" width="150" height="60" /></a>
+    </div>
+    <div class="tools">
+      <label class="search">
+        <span class="sr-only">Søg</span>
+        <input id="q" type="search" placeholder="Søg sted, bydel, ret eller citat" autocomplete="off" />
+      </label>
+      <div class="sorts" role="group" aria-label="Sortér efter">
+        <button class="btn" type="button" data-sort="score" aria-pressed="true">Karakter</button>
+        <button class="btn" type="button" data-sort="date" aria-pressed="false">Nyeste</button>
+        <button class="btn" type="button" data-sort="price" aria-pressed="false">Billigst</button>
+        <button class="btn" type="button" data-sort="gap" aria-pressed="false">Seerne er uenige</button>
+      </div>
+    </div>
+  </section>
+
+  <ol class="wrap list" id="list">
+    {ranked.map((r, i) => (
+      <li class="row" data-score={r.score ?? -1} data-date={r.date} data-price={r.price ?? 99999} data-gap={r.gap} data-search={r.search}>
+        <a href={`/sted/${r.slug}`} class="row__a">
+          <span class="row__rank" aria-label={`Nummer ${i + 1}`}>{i + 1}</span>
+          <span class="row__bar">
+            {r.v && <img class="row__thumb" src={r.v.thumb} alt="" loading="lazy" width="160" height="90" />}
+            <span class="row__text">
+              <span class="row__name shout">{r.name}</span>
+              <span class="row__meta">{[r.address || r.area, r.dish, r.price ? `${r.price} kr.` : null].filter(Boolean).join(", ")}</span>
+            </span>
+          </span>
+          <span class="row__score" style={`--c:${scoreColor(r.score)};--i:${scoreInk(r.score)}`}>{fmtScore(r.score)}</span>
+        </a>
+        {r.verdict && <p class="row__verdict">{isDumDurum(r.score) && <b class="row__dd">Dum dürüm</b>}“{r.verdict}” <span>{fmtDate(r.date)}</span></p>}
+      </li>
+    ))}
+  </ol>
+  <p class="wrap empty" id="empty" hidden>Intet sted matcher din søgning. Prøv en bydel som “Nørrebro” eller en ret som “durum”.</p>
+</Base>
+
+<script>
+  const list = document.getElementById("list")!;
+  const rows = [...list.querySelectorAll<HTMLLIElement>(".row")];
+  const q = document.getElementById("q") as HTMLInputElement;
+  const empty = document.getElementById("empty")!;
+  const sorters: Record<string, (a: HTMLElement, b: HTMLElement) => number> = {
+    score: (a, b) => +b.dataset.score! - +a.dataset.score!,
+    date: (a, b) => b.dataset.date!.localeCompare(a.dataset.date!),
+    price: (a, b) => +a.dataset.price! - +b.dataset.price!,
+    gap: (a, b) => +b.dataset.gap! - +a.dataset.gap!,
+  };
+  function render(key: string) {
+    rows.sort(sorters[key]).forEach((r, i) => {
+      list.appendChild(r);
+      r.querySelector(".row__rank")!.textContent = String(i + 1);
+    });
+  }
+  document.querySelectorAll<HTMLButtonElement>("[data-sort]").forEach((b) =>
+    b.addEventListener("click", () => {
+      document.querySelectorAll("[data-sort]").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+      render(b.dataset.sort!);
+    }),
+  );
+  // Quick filters from the chip stickers. Only one at a time.
+  const chipTests: Record<string, (r: HTMLElement) => boolean> = {
+    billig: (r) => +r.dataset.price! < 99999,
+    staerk: (r) => /stærk|chili|hot|spicy/.test(r.dataset.search!),
+    dd: (r) => +r.dataset.score! >= 8,
+    veg: (r) => /falafel|vegetar|vegan|halloumi|grønt/.test(r.dataset.search!),
+  };
+  let chip = "";
+  function applyFilters() {
+    const term = q.value.trim().toLowerCase();
+    let shown = 0;
+    rows.forEach((r) => {
+      const hit = (!term || r.dataset.search!.includes(term)) && (!chip || chipTests[chip](r));
+      r.hidden = !hit; shown += +hit;
+    });
+    empty.hidden = shown > 0;
+  }
+  q.addEventListener("input", applyFilters);
+  document.querySelectorAll<HTMLButtonElement>("[data-chip]").forEach((b) =>
+    b.addEventListener("click", () => {
+      chip = chip === b.dataset.chip ? "" : b.dataset.chip!;
+      document.querySelectorAll("[data-chip]").forEach((x) => x.setAttribute("aria-pressed", String((x as HTMLElement).dataset.chip === chip)));
+      if (chip === "billig") document.querySelector<HTMLButtonElement>('[data-sort="price"]')!.click();
+      applyFilters();
+    }),
+  );
+  if (location.hash === "#nyeste") document.querySelector<HTMLButtonElement>('[data-sort="date"]')!.click();
+</script>
+
+<style>
+  .head { padding: 48px 0 24px; }
+  h1 { font-size: clamp(3rem, 11vw, 7rem); }
+  .titlerow { display: flex; align-items: center; gap: 24px; }
+  .badge { width: 170px; height: auto; rotate: 10deg; filter: drop-shadow(4px 4px 0 #000); }
+  .chips { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin: 0 0 22px; }
+  .chip { all: unset; cursor: pointer; line-height: 0; border-radius: 999px; transition: transform .15s; }
+  .chip img { height: 54px; width: auto; }
+  .chip:hover { transform: rotate(-3deg) scale(1.05); }
+  .chip[aria-pressed="true"] { transform: rotate(-4deg) scale(1.08); filter: drop-shadow(0 0 0 #000) drop-shadow(4px 4px 0 #000); }
+  .chip:focus-visible { outline: 4px solid var(--red); outline-offset: 3px; }
+  .lede { max-width: 58ch; font-size: var(--t-2); line-height: 1.5; margin: 16px 0 28px; }
+  .tools { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+  .search input { font: inherit; font-size: var(--t-2); width: min(420px, 100%); padding: 10px 16px; border: var(--line); border-radius: 999px; box-shadow: var(--drop-sm); background: var(--paper); }
+  .search { flex: 1 1 280px; }
+  .sorts { display: flex; flex-wrap: wrap; gap: 8px; }
+  .sorts .btn { font-size: 1rem; }
+
+  .list { list-style: none; padding: 16px 0 0; margin-top: 0; display: grid; gap: 22px; counter-reset: none; }
+  .row__a { display: grid; grid-template-columns: 70px minmax(0, 1fr) 84px; align-items: center; gap: 14px; text-decoration: none; }
+  .row__rank { width: 64px; height: 64px; border-radius: 50%; background: var(--ink); color: var(--yellow); display: grid; place-items: center;
+    font-family: var(--display); font-size: var(--t-4); box-shadow: 3px 3px 0 var(--red); }
+  .row__bar { display: flex; align-items: center; gap: 14px; background: var(--bar); border: var(--line-fat); border-radius: 999px;
+    box-shadow: inset 0 0 0 3px rgba(255,255,255,.5), var(--drop-sm); padding: 6px 26px 6px 6px; min-width: 0; }
+  .row__thumb { width: 112px; aspect-ratio: 16/9; object-fit: cover; border-radius: 999px; border: 3px solid #000; flex: none; }
+  .row__text { display: flex; flex-direction: column; min-width: 0; }
+  .row__name { font-size: clamp(1.4rem, 3.4vw, 2.3rem); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .row__meta { align-self: flex-start; background: #000; color: #fff; font-size: .85rem; padding: 0 8px; margin-top: 4px; max-width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .row__score { width: 80px; height: 80px; border-radius: 50%; background: var(--c); color: var(--i); border: 4px solid #000; display: grid; place-items: center;
+    font-family: var(--display); font-size: var(--t-4); box-shadow: var(--drop-sm); rotate: -6deg; transition: rotate .2s; }
+  .row__a:hover .row__score { rotate: 6deg; }
+  .row__a:hover .row__bar { filter: brightness(1.06); }
+  .row__verdict { margin: 8px 0 0 84px; font-style: italic; max-width: 70ch; }
+  .row__verdict span { font-style: normal; font-size: var(--t-0); opacity: .7; margin-left: 6px; }
+  .row__dd { font-family: var(--display); font-weight: 400; font-style: normal; color: var(--red); border: 2px solid var(--red); border-radius: 6px;
+    padding: 0 6px; margin-right: 8px; text-transform: uppercase; font-size: .85rem; display: inline-block; rotate: -4deg; }
+  .row:first-child .row__rank { background: var(--red); color: #fff; box-shadow: 3px 3px 0 #000; }
+  .empty { font-size: var(--t-2); }
+
+  @media (max-width: 640px) {
+    .badge { width: 96px; }
+    .chip img { height: 42px; }
+    .row__a { grid-template-columns: 44px minmax(0, 1fr) 58px; gap: 8px; }
+    .row__rank { width: 42px; height: 42px; font-size: var(--t-2); }
+    .row__thumb { display: none; }
+    .row__bar { padding: 6px 14px; }
+    .row__score { width: 58px; height: 58px; font-size: var(--t-2); }
+    .row__verdict { margin-left: 52px; font-size: .9rem; }
+  }
+</style>

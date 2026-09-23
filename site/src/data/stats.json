@@ -1,0 +1,165 @@
+{
+ "videos": 95,
+ "reviews": 94,
+ "places": 91,
+ "total_views": 332513,
+ "total_comments": 1146,
+ "avg_score": 7.34,
+ "areas": [
+  [
+   "Nørrebro",
+   25
+  ],
+  [
+   "Vesterbro",
+   14
+  ],
+  [
+   "Amager",
+   8
+  ],
+  [
+   "Frederiksberg",
+   7
+  ],
+  [
+   "Østerbro",
+   5
+  ],
+  [
+   "Nordvest",
+   5
+  ],
+  [
+   "Christianshavn",
+   4
+  ],
+  [
+   "Valby",
+   4
+  ],
+  [
+   "Aarhus C",
+   3
+  ],
+  [
+   "Indre By",
+   3
+  ],
+  [
+   "Brønshøj",
+   3
+  ],
+  [
+   "Vanløse",
+   3
+  ],
+  [
+   "Strøget",
+   2
+  ],
+  [
+   "Christianshavns Torv",
+   1
+  ],
+  [
+   "Brøndbyøster",
+   1
+  ],
+  [
+   "Nørreport",
+   1
+  ],
+  [
+   "Islands Brygge",
+   1
+  ],
+  [
+   "Amagerbro",
+   1
+  ]
+ ],
+ "people": [
+  [
+   "René",
+   94
+  ],
+  [
+   "Ejeren",
+   19
+  ],
+  [
+   "AK",
+   2
+  ],
+  [
+   "JG",
+   2
+  ],
+  [
+   "Magnus",
+   1
+  ],
+  [
+   "Lillebroren",
+   1
+  ],
+  [
+   "Sølvdrengene",
+   1
+  ],
+  [
+   "Uso",
+   1
+  ],
+  [
+   "BK",
+   1
+  ],
+  [
+   "Ejerne (far og søn)",
+   1
+  ],
+  [
+   "Yusuf",
+   1
+  ],
+  [
+   "Linus",
+   1
+  ],
+  [
+   "Linus' søster",
+   1
+  ],
+  [
+   "Mustafa",
+   1
+  ],
+  [
+   "De unge gutter",
+   1
+  ],
+  [
+   "Abidine",
+   1
+  ],
+  [
+   "Bulgarsk medarbejder",
+   1
+  ],
+  [
+   "Rådgiver",
+   1
+  ],
+  [
+   "Emanuel",
+   1
+  ],
+  [
+   "Firat",
+   1
+  ]
+ ],
+ "with_transcript": 91
+}

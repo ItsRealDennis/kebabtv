@@ -1,0 +1,100 @@
+---
+import Base from "../layouts/Base.astro";
+import { videos, places, stats, fmtNum, fmtScore } from "../lib/data";
+
+// Stats as a page of old-school Tekst-TV. 40 columns, block graphics, four colors.
+const scored = videos.filter((v) => v.score != null);
+const bar = (n: number, max: number, width = 16) => "█".repeat(Math.max(0, Math.round((n / Math.max(max, 1)) * width))).padEnd(width, " ");
+
+const buckets = [10, 9, 8, 7, 6, 5, 4].map((lo) => ({
+  label: lo === 4 ? "0-4" : `${lo}${lo === 10 ? "" : "+"}`,
+  n: scored.filter((v) => (lo === 10 ? v.score! >= 10 : lo === 4 ? v.score! < 5 : v.score! >= lo && v.score! < lo + 1)).length,
+}));
+const bMax = Math.max(...buckets.map((b) => b.n));
+
+const areas = (stats.areas as [string, number][]).slice(0, 8);
+const aMax = Math.max(1, ...areas.map(([, n]) => n));
+
+const years = new Map<string, number[]>();
+for (const v of scored) {
+  const y = v.date?.slice(0, 4) ?? "?";
+  years.set(y, [...(years.get(y) ?? []), v.score!]);
+}
+const yearRows = [...years].sort().map(([y, s]) => ({ y, n: s.length, avg: s.reduce((a, b) => a + b, 0) / s.length }));
+
+const priced = videos.filter((v) => v.review.price_dkk);
+const avgPrice = priced.length ? priced.reduce((a, v) => a + v.review.price_dkk!, 0) / priced.length : null;
+const mostViewed = [...videos].sort((a, b) => (b.views ?? 0) - (a.views ?? 0)).slice(0, 5);
+const counts = new Map<string, number>();
+for (const v of videos) for (const n of v.review.people ?? []) counts.set(n, (counts.get(n) ?? 0) + 1);
+const people = [...counts].sort((a, b) => b[1] - a[1]).slice(0, 6);
+const dumDudum = videos.filter((v) => v.score != null && v.score >= 8).length;
+const pageNo = 300;
+---
+<Base title="Tekst-TV" channel={5} bodyClass="ttx-body">
+  <section class="ttx-wrap">
+    <div class="ttx" role="document" aria-label="Statistik som Tekst-TV">
+      <p class="row hdr"><span>P{pageNo}</span><span>KEBAB-TEKST</span><span id="clock"></span></p>
+      <p class="row title"><span class="dbl">KEBAB-TAL</span></p>
+
+      <p class="row"><span class="y">Afsnit ........</span> <span class="w">{stats.videos}</span></p>
+      <p class="row"><span class="y">Steder ........</span> <span class="w">{places.length}</span></p>
+      <p class="row"><span class="y">Snitkarakter ..</span> <span class="w">{fmtScore(stats.avg_score)}</span></p>
+      <p class="row"><span class="y">Visninger .....</span> <span class="w">{fmtNum(stats.total_views)}</span></p>
+      <p class="row"><span class="y">Kommentarer ...</span> <span class="w">{fmtNum(stats.total_comments)}</span></p>
+      <p class="row"><span class="y">Dum dürüm ....</span> <span class="w">{dumDudum} afsnit over 8</span></p>
+      {avgPrice && <p class="row"><span class="y">Snitpris ......</span> <span class="w">{Math.round(avgPrice)} kr.</span></p>}
+
+      <p class="row sec"><span class="r">KARAKTERFORDELING</span></p>
+      {buckets.map((b) => <p class="row"><span class="y">{b.label.padStart(4, " ")}</span> <span class="w">{bar(b.n, bMax)}</span> <span class="y">{b.n}</span></p>)}
+
+      {areas.length > 0 && <p class="row sec"><span class="r">BYDELE</span></p>}
+      {areas.map(([a, n]) => <p class="row"><span class="y">{a.slice(0, 12).padEnd(12, " ")}</span> <span class="w">{bar(n, aMax, 12)}</span> <span class="y">{n}</span></p>)}
+
+      {yearRows.length > 0 && <p class="row sec"><span class="r">ÅR FOR ÅR</span></p>}
+      {yearRows.map((r) => <p class="row"><span class="y">{r.y}</span>  <span class="w">{String(r.n).padStart(3, " ")} afsnit</span>  <span class="y">snit {fmtScore(Math.round(r.avg * 10) / 10)}</span></p>)}
+
+      <p class="row sec"><span class="r">MEST SETE</span></p>
+      {mostViewed.map((v, i) => (
+        <p class="row"><span class="y">{i + 1}.</span> <a class="w" href={v.place ? `/sted/${v.place}` : `https://www.youtube.com/watch?v=${v.id}`}>{(v.review.place_name || v.title).slice(0, 22)}</a> <span class="y">{fmtNum(v.views)}</span></p>
+      ))}
+
+      {people.length > 0 && <p class="row sec"><span class="r">OFTEST I BILLEDET</span></p>}
+      {people.map(([p, n]) => <p class="row"><span class="w">{p.slice(0, 20).padEnd(20, " ")}</span> <span class="y">{n} afsnit</span></p>)}
+
+      <p class="row foot"><a href="/hitlisten" class="fk fk-r">Hitliste</a><a href="/kortet" class="fk fk-g">Kort</a><a href="/oensker" class="fk fk-y">Ønsker</a><a href="/" class="fk fk-b">Forside</a></p>
+    </div>
+  </section>
+</Base>
+
+<script>
+  const el = document.getElementById("clock");
+  const f = new Intl.DateTimeFormat("da-DK", { weekday: "short", day: "2-digit", month: "short", hour: "2-digit", minute: "2-digit", second: "2-digit" });
+  const tick = () => { if (el) el.textContent = f.format(new Date()); };
+  tick(); setInterval(tick, 1000);
+</script>
+
+<style>
+  :global(body.ttx-body) { background: #000; color: #fff; }
+  :global(body.ttx-body .foot) { color: #bbb; }
+  .ttx-wrap { display: grid; place-items: center; padding: 40px 16px 20px; }
+  .ttx { font-family: "VT323", ui-monospace, monospace; font-size: clamp(15px, 3.6vw, 28px); line-height: 1.2; width: 44ch; max-width: 100%;
+    white-space: pre; overflow-x: auto; text-shadow: 0 0 6px rgba(255,255,255,.25); }
+  .row { margin: 0; }
+  .hdr { display: flex; justify-content: space-between; color: #fff; }
+  .hdr span:nth-child(2) { color: var(--yellow); }
+  .title { background: var(--red); color: #fff; margin: 6px 0 10px; padding: 2px 6px; }
+  .dbl { display: inline-block; transform: scaleY(2); transform-origin: top; margin-bottom: 1.1em; letter-spacing: .08em; color: var(--yellow); }
+  .sec { margin-top: 14px; }
+  .y { color: var(--yellow); }
+  .w { color: #fff; text-decoration: none; }
+  a.w:hover { background: #fff; color: #000; }
+  .r { background: var(--red); color: #fff; padding: 0 6px; }
+  .foot { margin-top: 20px; display: flex; gap: 0; }
+  .fk { flex: 1; text-decoration: none; padding: 0 4px; color: #000; }
+  .fk-r { background: #ff2a1a; color: #fff; }
+  .fk-g { background: #25e03a; }
+  .fk-y { background: var(--yellow); }
+  .fk-b { background: #1f5cff; color: #fff; }
+  .fk:hover { outline: 2px solid #fff; }
+</style>

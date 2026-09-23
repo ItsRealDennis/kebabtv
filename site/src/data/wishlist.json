@@ -1,0 +1,548 @@
+[
+ {
+  "name": "Doneros",
+  "area": null,
+  "mentions": 6,
+  "already_reviewed": false
+ },
+ {
+  "name": "Kebabbro",
+  "area": null,
+  "mentions": 5,
+  "already_reviewed": true
+ },
+ {
+  "name": "Zeynos",
+  "area": null,
+  "mentions": 4,
+  "already_reviewed": true
+ },
+ {
+  "name": "Mina Kebab",
+  "area": null,
+  "mentions": 4,
+  "already_reviewed": true
+ },
+ {
+  "name": "Efess Pizzabar",
+  "area": null,
+  "mentions": 4,
+  "already_reviewed": true
+ },
+ {
+  "name": "Al-faridi",
+  "area": null,
+  "mentions": 4,
+  "already_reviewed": false
+ },
+ {
+  "name": "Sheik",
+  "area": null,
+  "mentions": 3,
+  "already_reviewed": true
+ },
+ {
+  "name": "Shawarma House",
+  "area": null,
+  "mentions": 3,
+  "already_reviewed": false
+ },
+ {
+  "name": "Kebabery",
+  "area": null,
+  "mentions": 3,
+  "already_reviewed": true
+ },
+ {
+  "name": "Eagle Steak House",
+  "area": null,
+  "mentions": 3,
+  "already_reviewed": false
+ },
+ {
+  "name": "Al Shami",
+  "area": null,
+  "mentions": 3,
+  "already_reviewed": true
+ },
+ {
+  "name": "Turning Chicken",
+  "area": null,
+  "mentions": 2,
+  "already_reviewed": false
+ },
+ {
+  "name": "Shawarma No. 1",
+  "area": null,
+  "mentions": 2,
+  "already_reviewed": false
+ },
+ {
+  "name": "Shawafël",
+  "area": null,
+  "mentions": 2,
+  "already_reviewed": true
+ },
+ {
+  "name": "Shaku Maku",
+  "area": null,
+  "mentions": 2,
+  "already_reviewed": true
+ },
+ {
+  "name": "Killer Kebab",
+  "area": null,
+  "mentions": 2,
+  "already_reviewed": true
+ },
+ {
+  "name": "Kebab 2000",
+  "area": null,
+  "mentions": 2,
+  "already_reviewed": false
+ },
+ {
+  "name": "Istanbul Kebab",
+  "area": null,
+  "mentions": 2,
+  "already_reviewed": true
+ },
+ {
+  "name": "Havnens BBQ",
+  "area": null,
+  "mentions": 2,
+  "already_reviewed": true
+ },
+ {
+  "name": "Falafilo",
+  "area": null,
+  "mentions": 2,
+  "already_reviewed": true
+ },
+ {
+  "name": "Döner Delux",
+  "area": null,
+  "mentions": 2,
+  "already_reviewed": false
+ },
+ {
+  "name": "Bilal",
+  "area": null,
+  "mentions": 2,
+  "already_reviewed": false
+ },
+ {
+  "name": "Beirut Palace",
+  "area": null,
+  "mentions": 2,
+  "already_reviewed": true
+ },
+ {
+  "name": "Ankara",
+  "area": null,
+  "mentions": 2,
+  "already_reviewed": false
+ },
+ {
+  "name": "Alis bageri",
+  "area": null,
+  "mentions": 2,
+  "already_reviewed": false
+ },
+ {
+  "name": "Al Basha",
+  "area": null,
+  "mentions": 2,
+  "already_reviewed": false
+ },
+ {
+  "name": "Damascus",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Beirut",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Shawarma King",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Pizza Fantasia",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Koc",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Saray Kebab",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Østens grill",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Berlin Gemüse Döner",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Slagter Dogan",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Pita Kebab",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Aros Kebab",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Kebab No. 1",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Dilans i Sydhavnen",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Foodtruck ved Nørrebro St",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Maroosh",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": true
+ },
+ {
+  "name": "Shawarma Mesteren",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Baba Döner",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Ali Baba",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Taastrup Kebab",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "kebaboss",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "damhus kebab",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Slagteren i Kokkedal",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Gemüse Kebab (Aarhus)",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Al Malek",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Stjerne Kebab",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Giztro",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Kebabistan",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": true
+ },
+ {
+  "name": "Konya Slagteren",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "The Durum bar",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": true
+ },
+ {
+  "name": "MB steak",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Jordan",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Alis",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Vesterbrogade 79",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Aleppo shawarma",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Konya Kebab",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Frederiksberg",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Tadims",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "H C Ørsteds Vej",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Aarhus",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Bolan",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Fantasia Pizza",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Lion Kebab",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Bakken",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Ørsteds Kebab",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Torvets Kebab",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Bremens grillbar",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Valby",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Antonio",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Divane",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Durum Symfoni",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": true
+ },
+ {
+  "name": "Pizza og shawarma house",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "MB Steak House Pizza & Cafe",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Kebab Huset Bago",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Izmir Kebab",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Sevenbyforty",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Kebab og Grill House",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Miffers Drømme Durum",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Jonas Pizza",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Kebab Vallensbæk stations torv",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Ankara Durum House",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": true
+ },
+ {
+  "name": "Döner Lux",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "5 star",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Kebab Bar",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ },
+ {
+  "name": "Kebaba",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": true
+ },
+ {
+  "name": "Bilan",
+  "area": null,
+  "mentions": 1,
+  "already_reviewed": false
+ }
+]

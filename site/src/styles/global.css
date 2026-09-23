@@ -1,0 +1,104 @@
+/* KebabTV — tokens come straight from the channel's own graphics. */
+:root {
+  --yellow: #F3DC07;      /* bar start, primary recognition color */
+  --yellow-2: #F6E74E;    /* logo ring, page field */
+  --gold: #EDB10C;
+  --orange: #DE7414;
+  --red: #C93118;         /* stars, inner ring */
+  --oxblood: #730A03;     /* bar end */
+  --ink: #000000;
+  --paper: #FFFFFF;
+
+  --bar: linear-gradient(90deg, var(--yellow) 0%, var(--gold) 28%, var(--orange) 52%, var(--red) 76%, var(--oxblood) 100%);
+  --line: 3px solid var(--ink);
+  --line-fat: 5px solid var(--ink);
+  --drop: 6px 6px 0 var(--ink);
+  --drop-sm: 3px 3px 0 var(--ink);
+
+  --display: "Anton", "Impact", "Arial Narrow Bold", sans-serif;
+  --serif: "Bitter", Georgia, serif;
+
+  /* Type scale (1.25) */
+  --t-0: 0.8rem;
+  --t-1: 1rem;
+  --t-2: 1.25rem;
+  --t-3: 1.563rem;
+  --t-4: 1.953rem;
+  --t-5: 2.441rem;
+  --t-6: 3.815rem;
+
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; overflow-x: clip; }
+body { overflow-x: clip; }  /* tilted stickers must never cause sideways scroll */
+body {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: var(--t-1);
+  line-height: 1.55;
+  color: var(--ink);
+  background-color: var(--yellow-2);
+  /* Printed halftone, like a cheap sticker sheet. */
+  background-image: radial-gradient(rgba(115, 10, 3, 0.09) 1.2px, transparent 1.3px);
+  background-size: 9px 9px;
+  min-height: 100vh;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+
+:focus-visible { outline: 4px solid var(--red); outline-offset: 3px; }
+
+/* ---------- The channel's signature type treatment ---------- */
+.shout {
+  font-family: var(--display);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+  color: var(--paper);
+  -webkit-text-stroke: 0.09em var(--ink);
+  paint-order: stroke fill;
+  text-shadow: 0.06em 0.07em 0 var(--ink);
+  text-transform: uppercase;
+  margin: 0;
+}
+.shout--ink { color: var(--ink); -webkit-text-stroke: 0; text-shadow: none; }
+
+.plate {            /* black address box with light rim, as under the place name on thumbnails */
+  display: inline-block;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--serif);
+  font-weight: 400;
+  padding: 0.15em 0.6em 0.2em;
+  box-shadow: 0 0 0 2px var(--paper), 0 0 0 4px var(--ink);
+}
+
+.wrap { width: min(1180px, 100% - 32px); margin-inline: auto; }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5em;
+  font-family: var(--display); font-size: var(--t-2); text-transform: uppercase; letter-spacing: 0.02em;
+  background: var(--paper); border: var(--line); box-shadow: var(--drop-sm);
+  padding: 0.35em 0.9em; cursor: pointer; text-decoration: none;
+  border-radius: 999px;
+}
+.btn:hover { background: var(--yellow); }
+.btn:active { transform: translate(3px, 3px); box-shadow: none; }
+.btn[aria-pressed="true"] { background: var(--ink); color: var(--yellow); }
+
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ---------- Page change = TV channel change ---------- */
+@view-transition { navigation: auto; }
+::view-transition-old(root) { animation: tv-off 180ms ease-in both; }
+::view-transition-new(root) { animation: tv-on 260ms 120ms ease-out both; }
+@keyframes tv-off { to { transform: scaleY(0.004) scaleX(0.9); filter: brightness(3); } }
+@keyframes tv-on  { from { transform: scaleY(0.004) scaleX(0.9); filter: brightness(3); } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 1ms !important; animation-iteration-count: 1 !important; transition-duration: 1ms !important; }
+  ::view-transition-old(root), ::view-transition-new(root) { animation: none; }
+}

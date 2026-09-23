@@ -1,0 +1,1735 @@
+[
+ {
+  "slug": "shaku-maku-noerrebro",
+  "name": "Shaku Maku",
+  "address": "Nørrebrogade 46, 2200 København N",
+  "area": "Nørrebro",
+  "city": "København",
+  "geo": {
+   "lat": 55.689494,
+   "lng": 12.556784,
+   "query": "Nørrebrogade 46, 2200 København N, København",
+   "exact": true
+  },
+  "videos": [
+   "H1rvTGJu0mY"
+  ],
+  "score": 10.0,
+  "latest": "H1rvTGJu0mY",
+  "prices": []
+ },
+ {
+  "slug": "shawarma-bar-aarhus-c",
+  "name": "Shawarma Bar",
+  "address": "Guldsmedgade 17, Aarhus C",
+  "area": "Aarhus C",
+  "city": "Aarhus",
+  "geo": {
+   "lat": 56.159179,
+   "lng": 10.207581,
+   "query": "Guldsmedgade 17, Aarhus C, Aarhus",
+   "exact": true
+  },
+  "videos": [
+   "8mPe5RuKQfs"
+  ],
+  "score": 9.3,
+  "latest": "8mPe5RuKQfs",
+  "prices": []
+ },
+ {
+  "slug": "shawarmamesteren-aarhus-c",
+  "name": "Shawarmamesteren",
+  "address": "Guldsmedgade 17 - Aarhus C",
+  "area": "Aarhus C",
+  "city": "Aarhus",
+  "geo": {
+   "lat": 56.159179,
+   "lng": 10.207581,
+   "query": "Guldsmedgade 17 - Aarhus C, Aarhus",
+   "exact": true
+  },
+  "videos": [
+   "4lI5hMsht9k"
+  ],
+  "score": 9.3,
+  "latest": "4lI5hMsht9k",
+  "prices": []
+ },
+ {
+  "slug": "maroosh-noerrebro",
+  "name": "Maroosh",
+  "address": "Nørrebrogade",
+  "area": "Nørrebro",
+  "city": "København",
+  "geo": {
+   "lat": 55.6970851,
+   "lng": 12.5446801,
+   "query": "Nørrebrogade, København",
+   "exact": true
+  },
+  "videos": [
+   "qSNjrQirLoU",
+   "RbgjHPobAbQ"
+  ],
+  "score": 9.3,
+  "latest": "qSNjrQirLoU",
+  "prices": []
+ },
+ {
+  "slug": "zeyno-s-broenshoej",
+  "name": "Zeyno's",
+  "address": "Frederikssundsvej 175, Brønshøj",
+  "area": "Brønshøj",
+  "city": "København",
+  "geo": {
+   "lat": 55.704312,
+   "lng": 12.499257,
+   "query": "Frederikssundsvej 175, Brønshøj, København",
+   "exact": true
+  },
+  "videos": [
+   "OZe8Tombtn0"
+  ],
+  "score": 9.3,
+  "latest": "OZe8Tombtn0",
+  "prices": []
+ },
+ {
+  "slug": "royal-shawarma-bar-aarhus-c",
+  "name": "Royal Shawarma Bar",
+  "address": "Ryesgade 28, Aarhus C",
+  "area": "Aarhus C",
+  "city": "Aarhus",
+  "geo": {
+   "lat": 56.151252,
+   "lng": 10.204547,
+   "query": "Ryesgade 28, Aarhus C, Aarhus",
+   "exact": true
+  },
+  "videos": [
+   "cEM8WM1WknE"
+  ],
+  "score": 9.2,
+  "latest": "cEM8WM1WknE",
+  "prices": []
+ },
+ {
+  "slug": "sheik-shawarma-vesterbro",
+  "name": "Sheik Shawarma",
+  "address": "Istedgade 121",
+  "area": "Vesterbro",
+  "city": "København V",
+  "geo": {
+   "lat": 55.667455,
+   "lng": 12.547911,
+   "query": "Istedgade 121, København V",
+   "exact": true
+  },
+  "videos": [
+   "3MOhIZKP5Gc"
+  ],
+  "score": 8.8,
+  "latest": "3MOhIZKP5Gc",
+  "prices": []
+ },
+ {
+  "slug": "beirut-palace-noerrebro",
+  "name": "Beirut Palace",
+  "address": "Nørrebrogade 175",
+  "area": "Nørrebro",
+  "city": "København",
+  "geo": {
+   "lat": 55.695767,
+   "lng": 12.546424,
+   "query": "Nørrebrogade 175, København",
+   "exact": true
+  },
+  "videos": [
+   "Id7Sc145p5M"
+  ],
+  "score": 8.6,
+  "latest": "Id7Sc145p5M",
+  "prices": []
+ },
+ {
+  "slug": "killer-kebab-noerrebro",
+  "name": "Killer Kebab",
+  "address": "Rantzausgade 17",
+  "area": "Nørrebro",
+  "city": "København N",
+  "geo": {
+   "lat": 55.685856,
+   "lng": 12.551201,
+   "query": "Rantzausgade 17, København N",
+   "exact": true
+  },
+  "videos": [
+   "o3Uknd6L6fA"
+  ],
+  "score": 8.6,
+  "latest": "o3Uknd6L6fA",
+  "prices": [
+   95.0
+  ]
+ },
+ {
+  "slug": "kebabistan-vesterbro",
+  "name": "Kebabistan",
+  "address": "Istedgade 105",
+  "area": "Vesterbro",
+  "city": "København",
+  "geo": {
+   "lat": 55.667731,
+   "lng": 12.548826,
+   "query": "Istedgade 105, København",
+   "exact": true
+  },
+  "videos": [
+   "xN3szgCMLrk"
+  ],
+  "score": 8.6,
+  "latest": "xN3szgCMLrk",
+  "prices": []
+ },
+ {
+  "slug": "star-midnight-vesterbro",
+  "name": "Star Midnight",
+  "address": "Istedgade 101",
+  "area": "Vesterbro",
+  "city": "København",
+  "geo": {
+   "lat": 55.667904,
+   "lng": 12.54941,
+   "query": "Istedgade 101, København",
+   "exact": true
+  },
+  "videos": [
+   "D35sqUKraio"
+  ],
+  "score": 8.6,
+  "latest": "D35sqUKraio",
+  "prices": []
+ },
+ {
+  "slug": "sheik-valby-valby",
+  "name": "Sheik Valby",
+  "address": "Toftegårds Allé 6, Valby",
+  "area": "Valby",
+  "city": "København",
+  "geo": {
+   "lat": 55.666002,
+   "lng": 12.516935,
+   "query": "Toftegårds Allé 6, Valby, København",
+   "exact": true
+  },
+  "videos": [
+   "GZSGF-VVUsA"
+  ],
+  "score": 8.5,
+  "latest": "GZSGF-VVUsA",
+  "prices": []
+ },
+ {
+  "slug": "sheik-shawarma-noerrebro",
+  "name": "Sheik Shawarma",
+  "address": "Nørrebrogade",
+  "area": "Nørrebro",
+  "city": "København",
+  "geo": {
+   "lat": 55.6970851,
+   "lng": 12.5446801,
+   "query": "Nørrebrogade, København",
+   "exact": true
+  },
+  "videos": [
+   "iZGsCa_SrlE"
+  ],
+  "score": 8.4,
+  "latest": "iZGsCa_SrlE",
+  "prices": []
+ },
+ {
+  "slug": "istanbul-kebab-noerrebro",
+  "name": "Istanbul Kebab",
+  "address": "Tagensvej 100, KBH N",
+  "area": "Nørrebro",
+  "city": "København",
+  "geo": {
+   "lat": 55.703333,
+   "lng": 12.548012,
+   "query": "Tagensvej 100, KBH N, København",
+   "exact": true
+  },
+  "videos": [
+   "R4K0FR7W3DE"
+  ],
+  "score": 8.4,
+  "latest": "R4K0FR7W3DE",
+  "prices": []
+ },
+ {
+  "slug": "shawafel-islands-brygge",
+  "name": "Shawafël",
+  "address": "Islands Brygge 27, KBH S",
+  "area": "Islands Brygge",
+  "city": "København",
+  "geo": {
+   "lat": 55.665824,
+   "lng": 12.580752,
+   "query": "Islands Brygge 27, KBH S, København",
+   "exact": true
+  },
+  "videos": [
+   "eNjDEGEf0WI"
+  ],
+  "score": 8.3,
+  "latest": "eNjDEGEf0WI",
+  "prices": []
+ },
+ {
+  "slug": "mina-kebab-broenshoej",
+  "name": "Mina Kebab",
+  "address": "Frederikssundsvej 183A, Brønshøj",
+  "area": "Brønshøj",
+  "city": "København",
+  "geo": {
+   "lat": 55.704811,
+   "lng": 12.49579,
+   "query": "Frederikssundsvej 183A, Brønshøj, København",
+   "exact": true
+  },
+  "videos": [
+   "CexxIAc2Vwo"
+  ],
+  "score": 8.3,
+  "latest": "CexxIAc2Vwo",
+  "prices": []
+ },
+ {
+  "slug": "boy-s-vesterbro",
+  "name": "Boy's",
+  "address": "Istedgade 40C, KBH V",
+  "area": "Vesterbro",
+  "city": "København",
+  "geo": {
+   "lat": 55.670473,
+   "lng": 12.557144,
+   "query": "Istedgade 40C, KBH V, København",
+   "exact": true
+  },
+  "videos": [
+   "zHrlzESrlGs"
+  ],
+  "score": 8.3,
+  "latest": "zHrlzESrlGs",
+  "prices": []
+ },
+ {
+  "slug": "sultan-noerrebro",
+  "name": "Sultan",
+  "address": "Nørrebrogade, København",
+  "area": "Nørrebro",
+  "city": "København",
+  "geo": {
+   "lat": 55.7000597,
+   "lng": 12.5395193,
+   "query": "Nørrebrogade, København, København",
+   "exact": true
+  },
+  "videos": [
+   "TNeVHY481-s",
+   "TdXPNEN_Ym8"
+  ],
+  "score": 8.2,
+  "latest": "TNeVHY481-s",
+  "prices": []
+ },
+ {
+  "slug": "shawarma-grill-house-no-1-indre-by",
+  "name": "Shawarma Grill-House No. 1",
+  "address": "Frederiksberggade 38, KBH K",
+  "area": "Indre By",
+  "city": "København",
+  "geo": {
+   "lat": 55.67669,
+   "lng": 12.56963,
+   "query": "Frederiksberggade 38, KBH K, København",
+   "exact": true
+  },
+  "videos": [
+   "2GGRnNqrsbs"
+  ],
+  "score": 8.2,
+  "latest": "2GGRnNqrsbs",
+  "prices": []
+ },
+ {
+  "slug": "esma-s-vesterbro",
+  "name": "Esma's",
+  "address": "Hovedbanegården, KBH V",
+  "area": "Vesterbro",
+  "city": "København",
+  "geo": null,
+  "videos": [
+   "M4wCJS_zD7k"
+  ],
+  "score": 8.1,
+  "latest": "M4wCJS_zD7k",
+  "prices": []
+ },
+ {
+  "slug": "alshami-noerrebro",
+  "name": "Alshami",
+  "address": "Nørrebrogade 108",
+  "area": "Nørrebro",
+  "city": "København",
+  "geo": {
+   "lat": 55.69341,
+   "lng": 12.550543,
+   "query": "Nørrebrogade 108, København",
+   "exact": true
+  },
+  "videos": [
+   "JanJHY_2KGI"
+  ],
+  "score": 8.1,
+  "latest": "JanJHY_2KGI",
+  "prices": []
+ },
+ {
+  "slug": "ankara-durum-house-vesterbro",
+  "name": "Ankara Durüm House",
+  "address": "Istedgade 140",
+  "area": "Vesterbro",
+  "city": "København V",
+  "geo": {
+   "lat": 55.667712,
+   "lng": 12.5479,
+   "query": "Istedgade 140, København V",
+   "exact": true
+  },
+  "videos": [
+   "Ex_dWRX9ksE"
+  ],
+  "score": 8.1,
+  "latest": "Ex_dWRX9ksE",
+  "prices": []
+ },
+ {
+  "slug": "noerrebro-s-shawarma-noerrebro",
+  "name": "Nørrebro's Shawarma",
+  "address": "Folmer Bendtsens Pl. 4, 2200 KBH N",
+  "area": "Nørrebro",
+  "city": "København",
+  "geo": {
+   "lat": 55.7001689,
+   "lng": 12.5380352,
+   "query": "Folmer Bendtsens Pl. 4, København, København",
+   "exact": true
+  },
+  "videos": [
+   "qy_yHV0y2fE",
+   "TQQiu7oXoJA"
+  ],
+  "score": 8.0,
+  "latest": "qy_yHV0y2fE",
+  "prices": []
+ },
+ {
+  "slug": "kebabbro-noerrebro",
+  "name": "KebabBro",
+  "address": "Folmer Bendtsens Pl. 6",
+  "area": "Nørrebro",
+  "city": "København N",
+  "geo": {
+   "lat": 55.7004798,
+   "lng": 12.5383211,
+   "query": "KebabBro, Nørrebro",
+   "exact": false
+  },
+  "videos": [
+   "xjBAJExbmsE"
+  ],
+  "score": 8.0,
+  "latest": "xjBAJExbmsE",
+  "prices": []
+ },
+ {
+  "slug": "quick-stop-kebab-broendbyoester",
+  "name": "Quick Stop Kebab",
+  "address": "Brøndbyøster Station",
+  "area": "Brøndbyøster",
+  "city": "Brøndby",
+  "geo": {
+   "lat": 55.6650348,
+   "lng": 12.4419289,
+   "query": "Brøndbyøster Station, Brøndby",
+   "exact": true
+  },
+  "videos": [
+   "ZouaC3QrGpU"
+  ],
+  "score": 8.0,
+  "latest": "ZouaC3QrGpU",
+  "prices": []
+ },
+ {
+  "slug": "falafilo-noerrebro",
+  "name": "Falafilo",
+  "address": "Nørrebrogade 120",
+  "area": "Nørrebro",
+  "city": "København",
+  "geo": {
+   "lat": 55.694165,
+   "lng": 12.549417,
+   "query": "Nørrebrogade 120, København",
+   "exact": true
+  },
+  "videos": [
+   "HkHFn_9dpLY"
+  ],
+  "score": 8.0,
+  "latest": "HkHFn_9dpLY",
+  "prices": []
+ },
+ {
+  "slug": "vaernedams-kebab-burger-vesterbro",
+  "name": "Værnedams Kebab & Burger",
+  "address": "Værnedamsvej 20, KBH V",
+  "area": "Vesterbro",
+  "city": "København",
+  "geo": {
+   "lat": 55.674327,
+   "lng": 12.549973,
+   "query": "Værnedamsvej 20, KBH V, København",
+   "exact": true
+  },
+  "videos": [
+   "6zS4GfJeqx8"
+  ],
+  "score": 8.0,
+  "latest": "6zS4GfJeqx8",
+  "prices": []
+ },
+ {
+  "slug": "falafelkaelderen-noerrebro",
+  "name": "Falafelkælderen",
+  "address": "Ravnsborggade",
+  "area": "Nørrebro",
+  "city": "København",
+  "geo": {
+   "lat": 55.6888829,
+   "lng": 12.5623552,
+   "query": "Ravnsborggade, København",
+   "exact": true
+  },
+  "videos": [
+   "5yQGblW5pls"
+  ],
+  "score": 7.9,
+  "latest": "5yQGblW5pls",
+  "prices": []
+ },
+ {
+  "slug": "east-kebab-oesterbro",
+  "name": "East Kebab",
+  "address": "Østerbrogade 25, KBH Ø",
+  "area": "Østerbro",
+  "city": "København",
+  "geo": {
+   "lat": 55.698683,
+   "lng": 12.578078,
+   "query": "Østerbrogade 25, KBH Ø, København",
+   "exact": true
+  },
+  "videos": [
+   "3aDEtEtVuug"
+  ],
+  "score": 7.9,
+  "latest": "3aDEtEtVuug",
+  "prices": []
+ },
+ {
+  "slug": "al-batroun-frederiksberg",
+  "name": "Al Batroun",
+  "address": "H.C. Ørsteds Vej 43D, Frederiksberg",
+  "area": "Frederiksberg",
+  "city": "København",
+  "geo": {
+   "lat": 55.6849981,
+   "lng": 12.551783,
+   "query": "H.C. Ørsteds Vej 43D, Frederiksberg, København",
+   "exact": true
+  },
+  "videos": [
+   "kYFvBprWq7g"
+  ],
+  "score": 7.9,
+  "latest": "kYFvBprWq7g",
+  "prices": []
+ },
+ {
+  "slug": "osman-shawarma-frederiksberg",
+  "name": "Osman Shawarma",
+  "address": "H.C. Ørsteds Vej 43C, Frederiksberg",
+  "area": "Frederiksberg",
+  "city": "Frederiksberg",
+  "geo": {
+   "lat": 55.681715,
+   "lng": 12.549325,
+   "query": "H.C. Ørsteds Vej 43C, Frederiksberg, Frederiksberg",
+   "exact": true
+  },
+  "videos": [
+   "x4JSPkEUg4o"
+  ],
+  "score": 7.9,
+  "latest": "x4JSPkEUg4o",
+  "prices": []
+ },
+ {
+  "slug": "le-bab-amager",
+  "name": "Le Bab",
+  "address": "DR Byen Metro St.",
+  "area": "Amager",
+  "city": "København",
+  "geo": null,
+  "videos": [
+   "e8y8CeKEdDw"
+  ],
+  "score": 7.8,
+  "latest": "e8y8CeKEdDw",
+  "prices": []
+ },
+ {
+  "slug": "efess-pizzabar-noerrebro",
+  "name": "Efess Pizzabar",
+  "address": "Rantzausgade 26, KBH N",
+  "area": "Nørrebro",
+  "city": "København",
+  "geo": {
+   "lat": 55.686388,
+   "lng": 12.550299,
+   "query": "Rantzausgade 26, KBH N, København",
+   "exact": true
+  },
+  "videos": [
+   "93NQOVIayIo"
+  ],
+  "score": 7.8,
+  "latest": "93NQOVIayIo",
+  "prices": []
+ },
+ {
+  "slug": "uludag-kebab-vesterbro",
+  "name": "Uludag Kebab",
+  "address": "Viktoriagade 2",
+  "area": "Vesterbro",
+  "city": "København V",
+  "geo": {
+   "lat": 55.672438,
+   "lng": 12.557245,
+   "query": "Viktoriagade 2, København V",
+   "exact": true
+  },
+  "videos": [
+   "7B3U-80p2Pc"
+  ],
+  "score": 7.7,
+  "latest": "7B3U-80p2Pc",
+  "prices": []
+ },
+ {
+  "slug": "boy-s-shawarma-noerrebro",
+  "name": "Boy's Shawarma",
+  "address": "Nørrebrogade 212, KBH N",
+  "area": "Nørrebro",
+  "city": "København",
+  "geo": {
+   "lat": 55.69926,
+   "lng": 12.541659,
+   "query": "Nørrebrogade 212, KBH N, København",
+   "exact": true
+  },
+  "videos": [
+   "bpMWpZ_Bwww"
+  ],
+  "score": 7.7,
+  "latest": "bpMWpZ_Bwww",
+  "prices": []
+ },
+ {
+  "slug": "vefa-kebab-oesterbro",
+  "name": "Vefa Kebab",
+  "address": "Nordre Frihavnsgade 54",
+  "area": "Østerbro",
+  "city": "København Ø",
+  "geo": {
+   "lat": 55.70222,
+   "lng": 12.583006,
+   "query": "Nordre Frihavnsgade 54, København Ø",
+   "exact": true
+  },
+  "videos": [
+   "BIOT13pmlEg"
+  ],
+  "score": 7.7,
+  "latest": "BIOT13pmlEg",
+  "prices": []
+ },
+ {
+  "slug": "durum-symfoni-noerrebro",
+  "name": "Dürüm Symfoni",
+  "address": "Nørrebrogade 104, 2200 København N",
+  "area": "Nørrebro",
+  "city": "København",
+  "geo": {
+   "lat": 55.693156,
+   "lng": 12.550915,
+   "query": "Nørrebrogade 104, 2200 København N, København",
+   "exact": true
+  },
+  "videos": [
+   "BHw5dR0zom4"
+  ],
+  "score": 7.6,
+  "latest": "BHw5dR0zom4",
+  "prices": []
+ },
+ {
+  "slug": "kebabery-indre-by",
+  "name": "Kebabery",
+  "address": "Gothersgade 17, København K",
+  "area": "Indre By",
+  "city": "København",
+  "geo": {
+   "lat": 55.681717,
+   "lng": 12.583865,
+   "query": "Gothersgade 17, København K, København",
+   "exact": true
+  },
+  "videos": [
+   "tY4ysKqIx20"
+  ],
+  "score": 7.6,
+  "latest": "tY4ysKqIx20",
+  "prices": []
+ },
+ {
+  "slug": "broenshoej-kebab-broenshoej",
+  "name": "Brønshøj Kebab",
+  "address": "Frederikssundsvej 192, Brønshøj",
+  "area": "Brønshøj",
+  "city": "København",
+  "geo": {
+   "lat": 55.705735,
+   "lng": 12.492012,
+   "query": "Frederikssundsvej 192, Brønshøj, København",
+   "exact": true
+  },
+  "videos": [
+   "bPDzpWQ2GoM"
+  ],
+  "score": 7.6,
+  "latest": "bPDzpWQ2GoM",
+  "prices": []
+ },
+ {
+  "slug": "valby-doner-burger-valby",
+  "name": "Valby Doner Burger",
+  "address": "Valby Langgade 53, Valby",
+  "area": "Valby",
+  "city": "København",
+  "geo": {
+   "lat": 55.666499,
+   "lng": 12.516149,
+   "query": "Valby Langgade 53, Valby, København",
+   "exact": true
+  },
+  "videos": [
+   "dAkd7q_THaU"
+  ],
+  "score": 7.5,
+  "latest": "dAkd7q_THaU",
+  "prices": []
+ },
+ {
+  "slug": "kebaba-frederiksberg",
+  "name": "Kebaba",
+  "address": "Gl. Kongevej 102, Frederiksberg",
+  "area": "Frederiksberg",
+  "city": "København",
+  "geo": {
+   "lat": 55.6738299,
+   "lng": 12.5558003,
+   "query": "Gl. Kongevej 102, Frederiksberg, København",
+   "exact": true
+  },
+  "videos": [
+   "C0PxS1fpcD0"
+  ],
+  "score": 7.4,
+  "latest": "C0PxS1fpcD0",
+  "prices": [
+   80.0
+  ]
+ },
+ {
+  "slug": "killer-kebab-christianshavns-torv",
+  "name": "Killer Kebab",
+  "address": "Christianshavns Torv",
+  "area": "Christianshavns Torv",
+  "city": "København",
+  "geo": {
+   "lat": 55.6720743,
+   "lng": 12.5913631,
+   "query": "Christianshavns Torv, København",
+   "exact": true
+  },
+  "videos": [
+   "Hz-Bx1p25Ow"
+  ],
+  "score": 7.3,
+  "latest": "Hz-Bx1p25Ow",
+  "prices": [
+   95.0
+  ]
+ },
+ {
+  "slug": "killer-kebab-vesterbro",
+  "name": "Killer Kebab",
+  "address": "Istedgade 19, KBH V",
+  "area": "Vesterbro",
+  "city": "København",
+  "geo": {
+   "lat": 55.671127,
+   "lng": 12.55994,
+   "query": "Istedgade 19, KBH V, København",
+   "exact": true
+  },
+  "videos": [
+   "KwxJhrrHkhk"
+  ],
+  "score": 7.3,
+  "latest": "KwxJhrrHkhk",
+  "prices": [
+   95.0
+  ]
+ },
+ {
+  "slug": "pasha-kebab-vesterbro",
+  "name": "Pasha Kebab",
+  "address": "Enghavevej 59, KBH V",
+  "area": "Vesterbro",
+  "city": "København",
+  "geo": {
+   "lat": 55.6676849,
+   "lng": 12.5445913,
+   "query": "Pasha Kebab, Vesterbro",
+   "exact": false
+  },
+  "videos": [
+   "9BzfROzHnUg"
+  ],
+  "score": 7.3,
+  "latest": "9BzfROzHnUg",
+  "prices": []
+ },
+ {
+  "slug": "smileys-kebab-amager",
+  "name": "Smileys Kebab",
+  "address": "Amager Torv, København S",
+  "area": "Amager",
+  "city": "København",
+  "geo": null,
+  "videos": [
+   "rZk7NELM6OE"
+  ],
+  "score": 7.3,
+  "latest": "rZk7NELM6OE",
+  "prices": []
+ },
+ {
+  "slug": "city-kebab-amager",
+  "name": "City Kebab",
+  "address": "Amagerbrogade 107, KBH S",
+  "area": "Amager",
+  "city": "København",
+  "geo": {
+   "lat": 55.658562,
+   "lng": 12.60751,
+   "query": "Amagerbrogade 107, KBH S, København",
+   "exact": true
+  },
+  "videos": [
+   "dBmY2fd5ueM"
+  ],
+  "score": 7.3,
+  "latest": "dBmY2fd5ueM",
+  "prices": []
+ },
+ {
+  "slug": "noerreport-fastfood-noerreport",
+  "name": "Nørreport Fastfood",
+  "address": "Nørre Voldgade 90, 1358 København K",
+  "area": "Nørreport",
+  "city": "København",
+  "geo": {
+   "lat": 55.683538,
+   "lng": 12.572836,
+   "query": "Nørre Voldgade 90, 1358 København K, København",
+   "exact": true
+  },
+  "videos": [
+   "pf0-TenUnI4"
+  ],
+  "score": 7.2,
+  "latest": "pf0-TenUnI4",
+  "prices": []
+ },
+ {
+  "slug": "den-groenne-shawarma-frederiksberg",
+  "name": "Den Grønne Shawarma",
+  "address": "Falkoner Alle 26A, Frederiksberg",
+  "area": "Frederiksberg",
+  "city": "København",
+  "geo": {
+   "lat": 55.6875423,
+   "lng": 12.5411325,
+   "query": "Falkoner Alle 26A, Frederiksberg, København",
+   "exact": true
+  },
+  "videos": [
+   "Jw1RayR27sA"
+  ],
+  "score": 7.2,
+  "latest": "Jw1RayR27sA",
+  "prices": []
+ },
+ {
+  "slug": "havnens-bbq-christianshavn",
+  "name": "Havnens BBQ",
+  "address": "Torvegade 64, Chr.havn",
+  "area": "Christianshavn",
+  "city": "København",
+  "geo": {
+   "lat": 55.671197,
+   "lng": 12.593376,
+   "query": "Havnens BBQ, Christianshavn",
+   "exact": false
+  },
+  "videos": [
+   "XXxKDtU8n4E"
+  ],
+  "score": 7.2,
+  "latest": "XXxKDtU8n4E",
+  "prices": [
+   65.0
+  ]
+ },
+ {
+  "slug": "killer-kebab-frederiksberg",
+  "name": "Killer Kebab",
+  "address": "Sylows Alle 1, Frederiksberg",
+  "area": "Frederiksberg",
+  "city": "København",
+  "geo": {
+   "lat": 55.6800903,
+   "lng": 12.5331964,
+   "query": "Killer Kebab, Frederiksberg",
+   "exact": false
+  },
+  "videos": [
+   "yAbkwqTPp7o"
+  ],
+  "score": 7.1,
+  "latest": "yAbkwqTPp7o",
+  "prices": [
+   95.0
+  ]
+ },
+ {
+  "slug": "kebabland-ii-amager",
+  "name": "Kebabland II",
+  "address": "Amagerbrogade 50, KBH S",
+  "area": "Amager",
+  "city": "København",
+  "geo": {
+   "lat": 55.66302,
+   "lng": 12.601567,
+   "query": "Amagerbrogade 50, KBH S, København",
+   "exact": true
+  },
+  "videos": [
+   "_ATAlnUBTmA"
+  ],
+  "score": 7.1,
+  "latest": "_ATAlnUBTmA",
+  "prices": []
+ },
+ {
+  "slug": "dilan-s-noerrebro",
+  "name": "Dilan's",
+  "address": "Jagtvej 92, København N",
+  "area": "Nørrebro",
+  "city": "København",
+  "geo": {
+   "lat": 55.697435,
+   "lng": 12.552638,
+   "query": "Jagtvej 92, København N, København",
+   "exact": true
+  },
+  "videos": [
+   "QyJunGY8UEM"
+  ],
+  "score": 7.0,
+  "latest": "QyJunGY8UEM",
+  "prices": []
+ },
+ {
+  "slug": "massa-pizza-amager",
+  "name": "Massa Pizza",
+  "address": "Amagerbrogade 111, KBH S",
+  "area": "Amager",
+  "city": "København",
+  "geo": {
+   "lat": 55.658296,
+   "lng": 12.607826,
+   "query": "Amagerbrogade 111, KBH S, København",
+   "exact": true
+  },
+  "videos": [
+   "V8iz94QBKPs"
+  ],
+  "score": 6.9,
+  "latest": "V8iz94QBKPs",
+  "prices": []
+ },
+ {
+  "slug": "durum-bar-oest-oesterbro",
+  "name": "Durum Bar Øst",
+  "address": "Østerbrogade 90, KBH Ø",
+  "area": "Østerbro",
+  "city": "København",
+  "geo": {
+   "lat": 55.701115,
+   "lng": 12.577722,
+   "query": "Østerbrogade 90, KBH Ø, København",
+   "exact": true
+  },
+  "videos": [
+   "ZsPDStFasU8"
+  ],
+  "score": 6.9,
+  "latest": "ZsPDStFasU8",
+  "prices": []
+ },
+ {
+  "slug": "de-bedoevende-frederiksberg",
+  "name": "De Bedøvende",
+  "address": "Frederiksberg Centret",
+  "area": "Frederiksberg",
+  "city": "København",
+  "geo": null,
+  "videos": [
+   "zvRnpxGXA_0"
+  ],
+  "score": 6.8,
+  "latest": "zvRnpxGXA_0",
+  "prices": []
+ },
+ {
+  "slug": "afandi-kebab-noerrebro",
+  "name": "Afandi Kebab",
+  "address": "Jagtvej 139",
+  "area": "Nørrebro",
+  "city": "København",
+  "geo": {
+   "lat": 55.698611,
+   "lng": 12.553367,
+   "query": "Jagtvej 139, København",
+   "exact": true
+  },
+  "videos": [
+   "7fRk_NTQ3ms"
+  ],
+  "score": 6.8,
+  "latest": "7fRk_NTQ3ms",
+  "prices": []
+ },
+ {
+  "slug": "tunam-kebab-noerrebro",
+  "name": "Tunam Kebab",
+  "address": "Kapelvej, Nørrebro",
+  "area": "Nørrebro",
+  "city": "København",
+  "geo": {
+   "lat": 55.6888311,
+   "lng": 12.5530172,
+   "query": "Kapelvej, Nørrebro, København",
+   "exact": true
+  },
+  "videos": [
+   "Wj3AzVoIr44"
+  ],
+  "score": 6.8,
+  "latest": "Wj3AzVoIr44",
+  "prices": [
+   64.0
+  ]
+ },
+ {
+  "slug": "zam-zam-nordvest",
+  "name": "Zam Zam",
+  "address": "Frederikssundsvej 20, KBH NV",
+  "area": "Nordvest",
+  "city": "København",
+  "geo": {
+   "lat": 55.701663,
+   "lng": 12.53508,
+   "query": "Frederikssundsvej 20, KBH NV, København",
+   "exact": true
+  },
+  "videos": [
+   "vHRUDjyXfh8"
+  ],
+  "score": 6.7,
+  "latest": "vHRUDjyXfh8",
+  "prices": [
+   45.0
+  ]
+ },
+ {
+  "slug": "the-durum-bar-nordvest",
+  "name": "The Durum Bar",
+  "address": "Frederikssundsvej 40, KBH NV",
+  "area": "Nordvest",
+  "city": "København",
+  "geo": {
+   "lat": 55.702541,
+   "lng": 12.531916,
+   "query": "Frederikssundsvej 40, KBH NV, København",
+   "exact": true
+  },
+  "videos": [
+   "vENcKLKjR24"
+  ],
+  "score": 6.7,
+  "latest": "vENcKLKjR24",
+  "prices": []
+ },
+ {
+  "slug": "mevlana-noerrebro",
+  "name": "Mevlana",
+  "address": "Jagtvej 119",
+  "area": "Nørrebro",
+  "city": "København N",
+  "geo": {
+   "lat": 55.696909,
+   "lng": 12.551375,
+   "query": "Jagtvej 119, København N",
+   "exact": true
+  },
+  "videos": [
+   "EwkbhoSKICI"
+  ],
+  "score": 6.6,
+  "latest": "EwkbhoSKICI",
+  "prices": []
+ },
+ {
+  "slug": "kebab-poelsevogn-nordvest",
+  "name": "Kebab & Pølsevogn",
+  "address": "Frederikssundsvej 50",
+  "area": "Nordvest",
+  "city": "København NV",
+  "geo": {
+   "lat": 55.702881,
+   "lng": 12.531105,
+   "query": "Frederikssundsvej 50, København NV",
+   "exact": true
+  },
+  "videos": [
+   "oBInkxrL6js"
+  ],
+  "score": 6.6,
+  "latest": "oBInkxrL6js",
+  "prices": [
+   35.0
+  ]
+ },
+ {
+  "slug": "silas-kebab-amager",
+  "name": "Silas Kebab",
+  "address": "Amagerbrogade 124, KBH S",
+  "area": "Amager",
+  "city": "København",
+  "geo": {
+   "lat": 55.657881,
+   "lng": 12.607862,
+   "query": "Amagerbrogade 124, KBH S, København",
+   "exact": true
+  },
+  "videos": [
+   "MVaLd2Mecng"
+  ],
+  "score": 6.6,
+  "latest": "MVaLd2Mecng",
+  "prices": []
+ },
+ {
+  "slug": "flamingo-noerrebro",
+  "name": "Flamingo",
+  "address": "Nørrebrogade 221",
+  "area": "Nørrebro",
+  "city": "København N",
+  "geo": {
+   "lat": 55.699423,
+   "lng": 12.540893,
+   "query": "Nørrebrogade 221, København N",
+   "exact": true
+  },
+  "videos": [
+   "2NgkjGHMlcs"
+  ],
+  "score": 6.6,
+  "latest": "2NgkjGHMlcs",
+  "prices": []
+ },
+ {
+  "slug": "fuldkorn-noerrebro",
+  "name": "Fuldkorn",
+  "address": "Nørrebrogade 158, KBH N",
+  "area": "Nørrebro",
+  "city": "København",
+  "geo": {
+   "lat": 55.695506,
+   "lng": 12.547312,
+   "query": "Nørrebrogade 158, KBH N, København",
+   "exact": true
+  },
+  "videos": [
+   "l2TchfbgVzU"
+  ],
+  "score": 6.5,
+  "latest": "l2TchfbgVzU",
+  "prices": []
+ },
+ {
+  "slug": "vores-kebab-vanloese",
+  "name": "Vores Kebab",
+  "address": "Vanløse Torv, Vanløse",
+  "area": "Vanløse",
+  "city": "København",
+  "geo": {
+   "lat": 55.6876395,
+   "lng": 12.4904182,
+   "query": "Vanløse Torv, Vanløse, København",
+   "exact": true
+  },
+  "videos": [
+   "KgRGS7LZsdo"
+  ],
+  "score": 6.5,
+  "latest": "KgRGS7LZsdo",
+  "prices": [
+   75.0
+  ]
+ },
+ {
+  "slug": "duniyas-shish-kebab-oesterbro",
+  "name": "Duniyas Shish Kebab",
+  "address": "Sifs Plads 9-13, København Ø",
+  "area": "Østerbro",
+  "city": "København",
+  "geo": {
+   "lat": 55.7031073,
+   "lng": 12.5579276,
+   "query": "Duniyas Shish Kebab, Østerbro",
+   "exact": false
+  },
+  "videos": [
+   "X5J0X-AOVQM"
+  ],
+  "score": 6.5,
+  "latest": "X5J0X-AOVQM",
+  "prices": []
+ },
+ {
+  "slug": "doner-king-frederiksberg",
+  "name": "Döner King",
+  "address": "Falkoner Alle 73A, Frederiksberg",
+  "area": "Frederiksberg",
+  "city": "København",
+  "geo": {
+   "lat": 55.6875423,
+   "lng": 12.5411325,
+   "query": "Falkoner Alle 73A, Frederiksberg, København",
+   "exact": true
+  },
+  "videos": [
+   "MVOZZP8jlWQ"
+  ],
+  "score": 6.4,
+  "latest": "MVOZZP8jlWQ",
+  "prices": [
+   69.0
+  ]
+ },
+ {
+  "slug": "doner-corner-vesterbro",
+  "name": "Döner Corner",
+  "address": "Istedgade 31, København V",
+  "area": "Vesterbro",
+  "city": "København",
+  "geo": {
+   "lat": 55.670445,
+   "lng": 12.55786,
+   "query": "Istedgade 31, København V, København",
+   "exact": true
+  },
+  "videos": [
+   "HLiVTd-p-mY"
+  ],
+  "score": 6.4,
+  "latest": "HLiVTd-p-mY",
+  "prices": []
+ },
+ {
+  "slug": "badsha-noerrebro",
+  "name": "Badsha",
+  "address": "Nørrebro Street Food",
+  "area": "Nørrebro",
+  "city": "København",
+  "geo": {
+   "lat": 55.701818,
+   "lng": 12.5377789,
+   "query": "Nørrebro Street Food, København",
+   "exact": true
+  },
+  "videos": [
+   "_ICKJuYz4mM"
+  ],
+  "score": 6.3,
+  "latest": "_ICKJuYz4mM",
+  "prices": []
+ },
+ {
+  "slug": "kebab-ji-vesterbro",
+  "name": "Kebab-Ji",
+  "address": "Istedgade, København",
+  "area": "Vesterbro",
+  "city": "København",
+  "geo": {
+   "lat": 55.6710208,
+   "lng": 12.5592576,
+   "query": "Istedgade, København, København",
+   "exact": true
+  },
+  "videos": [
+   "by9KG1NRfnw"
+  ],
+  "score": 6.3,
+  "latest": "by9KG1NRfnw",
+  "prices": []
+ },
+ {
+  "slug": "oz-konya-kebab-nordvest",
+  "name": "Öz Konya Kebab",
+  "address": "Frederikssundsvej 14A, KBH NV",
+  "area": "Nordvest",
+  "city": "København",
+  "geo": {
+   "lat": 55.701517,
+   "lng": 12.535915,
+   "query": "Frederikssundsvej 14A, KBH NV, København",
+   "exact": true
+  },
+  "videos": [
+   "_72ZkQ2Dfoc"
+  ],
+  "score": 6.3,
+  "latest": "_72ZkQ2Dfoc",
+  "prices": []
+ },
+ {
+  "slug": "kosk-kebab-nordvest",
+  "name": "Kösk Kebab",
+  "address": "Frederikssundsvej 23, KBH NV",
+  "area": "Nordvest",
+  "city": "København",
+  "geo": {
+   "lat": 55.701493,
+   "lng": 12.53435,
+   "query": "Frederikssundsvej 23, KBH NV, København",
+   "exact": true
+  },
+  "videos": [
+   "V9UgSQyIf4w"
+  ],
+  "score": 6.3,
+  "latest": "V9UgSQyIf4w",
+  "prices": []
+ },
+ {
+  "slug": "kebabistan-3-oesterbro",
+  "name": "Kebabistan 3",
+  "address": "Nordre Frihavnsgade 63, 2100 København Ø",
+  "area": "Østerbro",
+  "city": "København",
+  "geo": {
+   "lat": 55.703053,
+   "lng": 12.584784,
+   "query": "Nordre Frihavnsgade 63, 2100 København Ø, København",
+   "exact": true
+  },
+  "videos": [
+   "OISBHnxd9fU"
+  ],
+  "score": 6.3,
+  "latest": "OISBHnxd9fU",
+  "prices": []
+ },
+ {
+  "slug": "doy-doy-noerrebro",
+  "name": "Doy Doy",
+  "address": "Nørrebrogade 225",
+  "area": "Nørrebro",
+  "city": "København",
+  "geo": {
+   "lat": 55.699617,
+   "lng": 12.5406,
+   "query": "Nørrebrogade 225, København",
+   "exact": true
+  },
+  "videos": [
+   "3LWmB3Tnk3s"
+  ],
+  "score": 6.3,
+  "latest": "3LWmB3Tnk3s",
+  "prices": [
+   45.0
+  ]
+ },
+ {
+  "slug": "alanya-kebab-noerrebro",
+  "name": "Alanya Kebab",
+  "address": "Ægirsgade 73, KBH N",
+  "area": "Nørrebro",
+  "city": "København",
+  "geo": {
+   "lat": 55.701742,
+   "lng": 12.550055,
+   "query": "Ægirsgade 73, KBH N, København",
+   "exact": true
+  },
+  "videos": [
+   "6Z8_oLy_VNg"
+  ],
+  "score": 6.2,
+  "latest": "6Z8_oLy_VNg",
+  "prices": []
+ },
+ {
+  "slug": "divan-noerrebro",
+  "name": "Divan",
+  "address": "Nørrebrogade 245, KBH N",
+  "area": "Nørrebro",
+  "city": "København",
+  "geo": {
+   "lat": 55.700289,
+   "lng": 12.539191,
+   "query": "Nørrebrogade 245, KBH N, København",
+   "exact": true
+  },
+  "videos": [
+   "xvkOrq4YLbI"
+  ],
+  "score": 6.2,
+  "latest": "xvkOrq4YLbI",
+  "prices": []
+ },
+ {
+  "slug": "kebabistan-amager",
+  "name": "Kebabistan",
+  "address": "Amagerbrogade 106, KBH S",
+  "area": "Amager",
+  "city": "København",
+  "geo": {
+   "lat": 55.659055,
+   "lng": 12.606442,
+   "query": "Amagerbrogade 106, KBH S, København",
+   "exact": true
+  },
+  "videos": [
+   "aJnxB37wWJk"
+  ],
+  "score": 6.1,
+  "latest": "aJnxB37wWJk",
+  "prices": []
+ },
+ {
+  "slug": "shish-amager",
+  "name": "Shish",
+  "address": "Amagerbrogade 80",
+  "area": "Amager",
+  "city": "København S",
+  "geo": {
+   "lat": 55.660854,
+   "lng": 12.604235,
+   "query": "Amagerbrogade 80, København S",
+   "exact": true
+  },
+  "videos": [
+   "NDBQCqjMuLA"
+  ],
+  "score": 5.9,
+  "latest": "NDBQCqjMuLA",
+  "prices": []
+ },
+ {
+  "slug": "kebab-house-valby",
+  "name": "Kebab House",
+  "address": "Ålekistevej 82, Valby",
+  "area": "Valby",
+  "city": "København",
+  "geo": null,
+  "videos": [
+   "BWE74mZeXew"
+  ],
+  "score": 5.8,
+  "latest": "BWE74mZeXew",
+  "prices": []
+ },
+ {
+  "slug": "dunyam-shawarma-house-vesterbro",
+  "name": "Dünyam Shawarma House",
+  "address": "Istedgade 140, KBH V",
+  "area": "Vesterbro",
+  "city": "København",
+  "geo": {
+   "lat": 55.667712,
+   "lng": 12.5479,
+   "query": "Istedgade 140, KBH V, København",
+   "exact": true
+  },
+  "videos": [
+   "DSY0p44L_fs"
+  ],
+  "score": 5.8,
+  "latest": "DSY0p44L_fs",
+  "prices": []
+ },
+ {
+  "slug": "silas-amagerbro",
+  "name": "Silas",
+  "address": "Amagerbrogade",
+  "area": "Amagerbro",
+  "city": "København",
+  "geo": {
+   "lat": 55.6646619,
+   "lng": 12.6002465,
+   "query": "Amagerbrogade, København",
+   "exact": true
+  },
+  "videos": [
+   "n3cguJx-yos"
+  ],
+  "score": 5.8,
+  "latest": "n3cguJx-yos",
+  "prices": []
+ },
+ {
+  "slug": "doener-kebab-stroeget",
+  "name": "Døner Kebab",
+  "address": "Gammeltorv, København",
+  "area": "Strøget",
+  "city": "København",
+  "geo": {
+   "lat": 55.6781401,
+   "lng": 12.5720766,
+   "query": "Gammeltorv, København, København",
+   "exact": true
+  },
+  "videos": [
+   "znDLxm0Yo-w"
+  ],
+  "score": 5.7,
+  "latest": "znDLxm0Yo-w",
+  "prices": []
+ },
+ {
+  "slug": "aalholm-pizza-grill-valby",
+  "name": "Ålholm Pizza & Grill",
+  "address": "Roskildevej 148B, Valby",
+  "area": "Valby",
+  "city": "København",
+  "geo": {
+   "lat": 55.67274,
+   "lng": 12.489213,
+   "query": "Roskildevej 148B, Valby, København",
+   "exact": true
+  },
+  "videos": [
+   "NGrafhcJXjg"
+  ],
+  "score": 5.6,
+  "latest": "NGrafhcJXjg",
+  "prices": []
+ },
+ {
+  "slug": "1001-nat-pizza-vesterbro",
+  "name": "1001 Nat Pizza",
+  "address": "Istedgade 75",
+  "area": "Vesterbro",
+  "city": "København V",
+  "geo": {
+   "lat": 55.668666,
+   "lng": 12.551992,
+   "query": "Istedgade 75, København V",
+   "exact": true
+  },
+  "videos": [
+   "g3EkYadynZM"
+  ],
+  "score": 5.6,
+  "latest": "g3EkYadynZM",
+  "prices": []
+ },
+ {
+  "slug": "shawarma-house-ok-vanloese",
+  "name": "Shawarma House OK+",
+  "address": "Linde Allé 10, Vanløse",
+  "area": "Vanløse",
+  "city": "København",
+  "geo": {
+   "lat": 55.682929,
+   "lng": 12.491838,
+   "query": "Linde Allé 10, Vanløse, København",
+   "exact": true
+  },
+  "videos": [
+   "Kroyv_2whLs"
+  ],
+  "score": 5.2,
+  "latest": "Kroyv_2whLs",
+  "prices": []
+ },
+ {
+  "slug": "shawarma-kebap-palace-stroeget",
+  "name": "Shawarma Kebap Palace",
+  "address": "Frederiksberggade 30",
+  "area": "Strøget",
+  "city": "København K",
+  "geo": {
+   "lat": 55.676899,
+   "lng": 12.570106,
+   "query": "Frederiksberggade 30, København K",
+   "exact": true
+  },
+  "videos": [
+   "Jmjf55MUazU"
+  ],
+  "score": 5.1,
+  "latest": "Jmjf55MUazU",
+  "prices": []
+ },
+ {
+  "slug": "mr-shawarma-christianshavn",
+  "name": "Mr. Shawarma",
+  "address": "Fabriksområdet 50",
+  "area": "Christianshavn",
+  "city": "København",
+  "geo": {
+   "lat": 55.672843,
+   "lng": 12.599905,
+   "query": "Fabriksområdet 50, København",
+   "exact": true
+  },
+  "videos": [
+   "SZ0e9f1KUmw"
+  ],
+  "score": 4.2,
+  "latest": "SZ0e9f1KUmw",
+  "prices": []
+ },
+ {
+  "slug": "christiania-falafel-christianshavn",
+  "name": "Christiania Falafel",
+  "address": "Pusher Street, Christianshavn",
+  "area": "Christianshavn",
+  "city": "København",
+  "geo": {
+   "lat": 55.6734321,
+   "lng": 12.5999871,
+   "query": "Pusher Street, Christianshavn, København",
+   "exact": true
+  },
+  "videos": [
+   "fw06B4_uaTc"
+  ],
+  "score": null,
+  "latest": "fw06B4_uaTc",
+  "prices": [
+   55.0
+  ]
+ },
+ {
+  "slug": "kolumbia-christianshavn",
+  "name": "Kolumbia",
+  "address": "Torvegade 56",
+  "area": "Christianshavn",
+  "city": "København",
+  "geo": {
+   "lat": 55.671614,
+   "lng": 12.592557,
+   "query": "Torvegade 56, København",
+   "exact": true
+  },
+  "videos": [
+   "zM3BtnNMG8s"
+  ],
+  "score": null,
+  "latest": "zM3BtnNMG8s",
+  "prices": []
+ },
+ {
+  "slug": "efes-pizza-burger-vanloese",
+  "name": "Efes Pizza Burger",
+  "address": "Ålekistevej 86",
+  "area": "Vanløse",
+  "city": "København",
+  "geo": {
+   "lat": 55.683862,
+   "lng": 12.483735,
+   "query": "Ålekistevej 86, København",
+   "exact": true
+  },
+  "videos": [
+   "bnUYu8e9U38"
+  ],
+  "score": null,
+  "latest": "bnUYu8e9U38",
+  "prices": []
+ },
+ {
+  "slug": "stroeg-shawarma-indre-by",
+  "name": "Strøg Shawarma",
+  "address": "Frederiksberggade 5, KBH K",
+  "area": "Indre By",
+  "city": "København",
+  "geo": {
+   "lat": 55.677485,
+   "lng": 12.571798,
+   "query": "Frederiksberggade 5, KBH K, København",
+   "exact": true
+  },
+  "videos": [
+   "kVoaetrdNgc"
+  ],
+  "score": null,
+  "latest": "kVoaetrdNgc",
+  "prices": []
+ }
+]

@@ -1,0 +1,7 @@
+---
+// Illustrated dürüm (their asset set). Decorative only.
+interface Props { size?: number; class?: string; tilt?: number }
+const { size = 96, class: cls = "", tilt = 0 } = Astro.props;
+---
+<img class={cls} src="/assets/durum.webp" alt="" width={size} height={Math.round(size * 1.03)} loading="lazy" decoding="async"
+  style={`transform: rotate(${tilt}deg); object-fit: contain; display: block;`} />

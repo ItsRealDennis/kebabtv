@@ -1,0 +1,107 @@
+---
+import "../styles/global.css";
+
+interface Props { title?: string; description?: string; channel?: number; bodyClass?: string }
+const { title, description = "Alle KebabTV's anmeldelser samlet: karakterer, kort, citater og hvad seerne mener.", channel, bodyClass = "" } = Astro.props;
+const channels = [
+  { n: 1, href: "/", label: "Kanalen" },
+  { n: 2, href: "/hitlisten", label: "Hitlisten" },
+  { n: 3, href: "/kortet", label: "Kortet" },
+  { n: 4, href: "/oensker", label: "Seernes ønsker" },
+  { n: 5, href: "/tekst-tv", label: "Tekst-TV" },
+];
+---
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title ? `${title} · KebabTV` : "KebabTV — hjemmelavede kebabanmeldelser"}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#F3DC07" />
+    <!-- Private preview until KebabTV approves: keep search engines out. -->
+    <meta name="robots" content="noindex, nofollow" />
+    <meta property="og:title" content={title ? `${title} · KebabTV` : "KebabTV"} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/og.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/jpeg" href="/logo.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bitter:ital,wght@0,400;0,600;0,800;1,400&family=VT323&display=swap" rel="stylesheet" />
+    <slot name="head" />
+  </head>
+  <body class={bodyClass}>
+    <a class="skip" href="#main">Spring til indhold</a>
+    <header class="top">
+      <div class="top__in wrap">
+        <a class="brand" href="/" aria-label="KebabTV forside">
+          <img class="logo" src="/logo.jpg" alt="KebabTV" width="64" height="64" />
+        </a>
+        <nav aria-label="Kanaler">
+          <ol class="chans">
+            {channels.map((c) => (
+              <li>
+                <a href={c.href} class="chan" aria-current={channel === c.n ? "page" : undefined}>
+                  <span class="chan__n" aria-hidden="true">{c.n}</span>
+                  <span class="chan__l">{c.label}</span>
+                </a>
+              </li>
+            ))}
+          </ol>
+        </nav>
+      </div>
+    </header>
+    <main id="main"><slot /></main>
+    <footer class="foot wrap">
+      <img class="slogan" src="/assets/slogan.webp" alt="God kebab, bedre humør" width="280" height="216" />
+      <div class="foot__text">
+      <p class="credit">Lavet med kebab-kærlighed af <a href="https://jinjrstudio.com" rel="author">jinjrstudio.com</a></p>
+      <p>
+        Uofficiel oversigt over <a href="https://www.youtube.com/@KEBABTVKBH">KebabTV på YouTube</a>.
+        Karakterer, citater og seer-stemning er udtrukket automatisk fra videoernes undertekster og kommentarer, så der kan være fejl. Tjek altid videoen.
+      </p>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style>
+  .skip { position: absolute; left: -999px; top: 8px; background: var(--ink); color: var(--yellow); padding: 8px 14px; z-index: 50; }
+  .skip:focus { left: 8px; }
+  .top { background: var(--ink); border-bottom: 5px solid var(--ink); box-shadow: 0 5px 0 var(--red); position: relative; z-index: 10; }
+  .top__in { display: flex; align-items: center; gap: 20px; min-height: 76px; }
+  .brand { display: block; line-height: 0; margin: 6px 0 -18px; transform: rotate(-8deg); transition: transform .2s; filter: drop-shadow(3px 3px 0 var(--red)); }
+  .brand:hover { transform: rotate(4deg) scale(1.05); }
+  .logo { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; clip-path: circle(49%); }
+  nav { margin-left: auto; min-width: 0; }
+  .chans { list-style: none; display: flex; gap: 6px; margin: 0; padding: 0; overflow-x: auto; scrollbar-width: none; }
+  .chan {
+    display: flex; align-items: center; gap: 8px; text-decoration: none; white-space: nowrap;
+    color: var(--paper); font-family: var(--display); font-size: 1.05rem; letter-spacing: .02em;
+    padding: 8px 12px 8px 8px; border-radius: 6px;
+  }
+  .chan__n {
+    display: grid; place-items: center; width: 1.7em; height: 1.7em; border-radius: 50%;
+    background: #222; color: var(--yellow); border: 2px solid #444; font-size: .9em;
+  }
+  .chan:hover .chan__n { background: var(--yellow); color: var(--ink); border-color: var(--yellow); }
+  .chan[aria-current="page"] { background: var(--yellow); color: var(--ink); }
+  .chan[aria-current="page"] .chan__n { background: var(--ink); color: var(--yellow); border-color: var(--ink); }
+  .foot { padding: 56px 0 40px; font-size: var(--t-0); display: flex; align-items: center; gap: 28px; }
+  .foot p { max-width: 62ch; margin: 0; }
+  .foot__text { display: grid; gap: 10px; }
+  .credit { font-family: var(--display); font-size: var(--t-2); letter-spacing: .01em; }
+  .credit a { background: var(--ink); color: var(--yellow); text-decoration: none; padding: 1px 10px 2px; border-radius: 999px; }
+  .credit a:hover { background: var(--red); color: var(--paper); }
+  .slogan { width: 220px; height: auto; flex: none; rotate: -4deg; }
+  @media (max-width: 760px) {
+    .top__in { gap: 10px; min-height: 64px; }
+    .brand { margin-bottom: -10px; }
+    .logo { width: 50px; height: 50px; }
+    .chan__l { display: none; }
+    .foot { flex-direction: column; align-items: flex-start; }
+    .slogan { width: 170px; }
+    .chan[aria-current="page"] .chan__l { display: inline; }
+  }
+</style>

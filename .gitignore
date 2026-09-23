@@ -1,0 +1,11 @@
+.env
+/data/
+site/node_modules/
+site/dist/
+__pycache__/
+.playwright-mcp/
+screenshots/
+assets-source/
+site/public/maplibre/
+site/.astro/
+*.log

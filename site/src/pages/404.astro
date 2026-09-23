@@ -1,0 +1,21 @@
+---
+import Base from "../layouts/Base.astro";
+---
+<Base title="Ingen signal">
+  <section class="wrap nf">
+    <img src="/assets/pin.webp" alt="" width="220" height="205" />
+    <div>
+      <h1 class="shout">Ingen signal</h1>
+      <p>Den side findes ikke. Måske er stedet lukket, eller også har adressen fået en ny stavemåde.</p>
+      <p class="links"><a class="btn" href="/hitlisten">Se hitlisten</a> <a class="btn" href="/kortet">Åbn kortet</a></p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .nf { display: flex; align-items: center; gap: 40px; padding: 80px 0 40px; flex-wrap: wrap; }
+  .nf img { width: 220px; height: auto; rotate: -8deg; filter: drop-shadow(5px 5px 0 #000); }
+  h1 { font-size: clamp(3rem, 10vw, 6rem); }
+  p { font-size: var(--t-2); max-width: 44ch; }
+  .links { display: flex; gap: 12px; flex-wrap: wrap; }
+</style>

@@ -1,0 +1,33 @@
+---
+// The channel's signature name bar: dürüm breaking out left, big outlined name, black address plate.
+import Durum from "./Durum.astro";
+interface Props { name: string; sub?: string | null; size?: "sm" | "md" | "lg"; tag?: string }
+const { name, sub, size = "md", tag = "div" } = Astro.props;
+const Tag = tag as any;
+---
+<Tag class={`lt lt--${size}`}>
+  <span class="lt__durum"><Durum size={size === "lg" ? 150 : size === "md" ? 104 : 70} /></span>
+  <span class="lt__bar">
+    <span class="lt__name shout">{name}</span>
+  </span>
+  {sub && <span class="lt__sub plate">{sub}</span>}
+</Tag>
+
+<style>
+  .lt { position: relative; display: inline-flex; flex-direction: column; align-items: flex-start; max-width: 100%;
+        padding-left: calc(var(--lt-d) * 0.62); margin: 0; --lt-d: 104px; --lt-f: var(--t-5); }
+  .lt--sm { --lt-d: 70px; --lt-f: var(--t-3); }
+  .lt--lg { --lt-d: 150px; --lt-f: clamp(2.2rem, 7vw, 4.8rem); }
+  .lt__bar {
+    display: block; max-width: 100%;
+    background: var(--bar);
+    border: var(--line-fat); border-radius: 999px;
+    box-shadow: inset 0 0 0 3px rgba(255,255,255,.55), var(--drop-sm);
+    padding: 0.18em 0.8em 0.12em calc(var(--lt-d) * 0.5);
+    font-size: var(--lt-f);
+  }
+  .lt__name { display: block; overflow-wrap: anywhere; }
+  .lt__sub { margin: 0.5rem 0 0 calc(var(--lt-d) * 0.45); font-size: calc(var(--lt-f) * 0.38); max-width: 100%; }
+  .lt__durum { position: absolute; left: 0; top: 50%; translate: 0 -62%; z-index: 2; line-height: 0; filter: drop-shadow(3px 3px 0 #000); }
+  .lt--sm .lt__sub { font-size: 0.85rem; }
+</style>

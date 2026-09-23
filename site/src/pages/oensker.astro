@@ -1,0 +1,62 @@
+---
+import Base from "../layouts/Base.astro";
+import { wishlist } from "../lib/data";
+
+const open = wishlist.filter((w) => !w.already_reviewed);
+const done = wishlist.filter((w) => w.already_reviewed);
+const maxMentions = Math.max(1, ...open.map((w) => w.mentions));
+---
+<Base title="Seernes ønsker" channel={4}>
+  <section class="wrap head">
+    <h1 class="shout">Seernes ønsker</h1>
+    <p class="lede">Steder seerne bliver ved med at foreslå i kommentarerne, men som KebabTV ikke har anmeldt endnu. Tallet er, hvor mange gange stedet er nævnt.</p>
+  </section>
+
+  {open.length === 0 ? (
+    <p class="wrap emptytxt">Listen fyldes op, når botten har læst kommentarerne. Kør <code>python bot/run.py</code> i projektmappen.</p>
+  ) : (
+    <ol class="wrap wl">
+      {open.map((w, i) => (
+        <li class="wl__item" style={`--w:${(w.mentions / maxMentions) * 100}%; --r:${(i % 2 ? 1 : -1) * (0.6 + (i % 3) * 0.5)}deg`}>
+          <span class="wl__n">{w.mentions}</span>
+          <span class="wl__body">
+            <span class="wl__name">{w.name}</span>
+            {w.area && <span class="wl__area">{w.area}</span>}
+            <span class="wl__bar" aria-hidden="true"></span>
+          </span>
+        </li>
+      ))}
+    </ol>
+  )}
+
+  {done.length > 0 && (
+    <section class="wrap done">
+      <h2 class="h2">Ønsket og leveret</h2>
+      <p>Seerne bad om dem, og KebabTV tog derhen:</p>
+      <ul>{done.map((w) => <li>{w.name} <span>({w.mentions})</span></li>)}</ul>
+    </section>
+  )}
+</Base>
+
+<style>
+  .head { padding: 48px 0 28px; }
+  h1 { font-size: clamp(3rem, 10vw, 6.4rem); }
+  .lede { max-width: 58ch; font-size: var(--t-2); margin: 16px 0 0; }
+  .emptytxt { font-size: var(--t-2); }
+  .wl { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 22px 20px; }
+  /* Each wish is a note taped to the fridge. */
+  .wl__item { position: relative; display: flex; gap: 14px; align-items: center; background: var(--paper); border: var(--line);
+    padding: 16px 16px 20px; box-shadow: var(--drop-sm); rotate: var(--r); }
+  .wl__item::before { content: ""; position: absolute; top: -12px; left: 50%; translate: -50% 0; width: 70px; height: 20px;
+    background: rgba(201, 49, 24, .75); border: 2px solid #000; rotate: calc(var(--r) * -2); }
+  .wl__item:nth-child(-n+3) { background: var(--yellow); }
+  .wl__n { font-family: var(--display); font-size: 3rem; line-height: 1; min-width: 1.4em; text-align: center; }
+  .wl__body { display: flex; flex-direction: column; min-width: 0; flex: 1; }
+  .wl__name { font-weight: 800; font-size: var(--t-2); line-height: 1.15; overflow-wrap: anywhere; }
+  .wl__area { font-size: var(--t-0); }
+  .wl__bar { display: block; height: 8px; margin-top: 8px; width: var(--w); background: var(--bar); border: 2px solid #000; border-radius: 999px; }
+  .done { margin-top: 56px; }
+  .h2 { font-family: var(--display); font-weight: 400; font-size: var(--t-4); margin: 0; }
+  .done ul { columns: 3 200px; padding-left: 1.1em; }
+  .done span { opacity: .6; font-size: var(--t-0); }
+</style>
