@@ -163,6 +163,19 @@ const Phone: React.FC = () => {
           <div style={{ position: "absolute", top: 18, left: "50%", width: 150, height: 40, marginLeft: -75, background: "#000", borderRadius: 999 }} />
         </div>
       </div>
+      {/* The site's own sticker set pops in around the phone. */}
+      {[
+        { src: "badge-bedste.webp", x: 760, y: 330, w: 300, at: 14, r: 12 },
+        { src: "chip-billig.webp", x: 10, y: 640, w: 330, at: 34, r: -10 },
+        { src: "chip-staerk.webp", x: 730, y: 900, w: 330, at: 50, r: 8 },
+        { src: "chip-dum-durum.webp", x: 0, y: 1160, w: 340, at: 66, r: -6 },
+        { src: "chip-vegetar.webp", x: 720, y: 1420, w: 340, at: 82, r: 7 },
+        { src: "chip-naer.webp", x: 30, y: 1640, w: 380, at: 98, r: -5 },
+      ].map((c) => {
+        const cp = spring({ frame: f - c.at, fps, config: { damping: 9, stiffness: 220 } });
+        return <Img key={c.src} src={staticFile(c.src)} style={{ position: "absolute", left: c.x, top: c.y, width: c.w,
+          transform: `scale(${cp}) rotate(${c.r + (1 - cp) * 30}deg)`, filter: "drop-shadow(6px 6px 0 #000)" }} />;
+      })}
     </AbsoluteFill>
   );
 };
@@ -261,20 +274,27 @@ const End: React.FC = () => {
   const f = useCurrentFrame();
   const { fps } = useVideoConfig();
   const p = spring({ frame: f, fps, config: { damping: 12 } });
-  const p2 = spring({ frame: f - 10, fps, config: { damping: 12 } });
+  const p2 = spring({ frame: f - 8, fps, config: { damping: 12 } });
+  const rene = spring({ frame: f - 4, fps, config: { damping: 13, stiffness: 150 } });
+  const btn = spring({ frame: f - 16, fps, config: { damping: 10 } });
   return (
     <AbsoluteFill>
       <Halftone />
-      <AbsoluteFill style={{ alignItems: "center", justifyContent: "center", gap: 40, paddingBottom: 200 }}>
-        <Img src={staticFile("logo.jpg")} style={{ width: 460, borderRadius: "50%", clipPath: "circle(49%)", transform: `scale(${p}) rotate(${interpolate(p, [0, 1], [-90, -6])}deg)` }} />
-        <div style={shout(110, { transform: `scale(${p2})` })}>Se hele listen</div>
+      <AbsoluteFill style={{ alignItems: "center", paddingTop: 150, gap: 30 }}>
+        <Img src={staticFile("logo.jpg")} style={{ width: 300, borderRadius: "50%", clipPath: "circle(49%)", transform: `scale(${p}) rotate(${interpolate(p, [0, 1], [-90, -6])}deg)` }} />
+        <div style={shout(112, { transform: `scale(${p2})` })}>Se hele listen</div>
         <div style={{ background: C.ink, color: C.yellow, fontFamily: ANTON, fontSize: 84, padding: "14px 44px 20px", borderRadius: 999, boxShadow: `8px 8px 0 ${C.red}`,
           transform: `translateY(${interpolate(p2, [0, 1], [300, 0])}px)` }}>kebabtv.vercel.app</div>
-        <div style={{ fontFamily: BITTER, fontWeight: 800, fontSize: 40, opacity: interpolate(f, [20, 35], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }) }}>
-          Lavet med kebab-kærlighed af jinjrstudio.com
-        </div>
+        <Img src={staticFile("btn-seneste.webp")} style={{ width: 560, marginTop: 10, transform: `scale(${btn}) rotate(-3deg)`, filter: "drop-shadow(6px 6px 0 #000)" }} />
       </AbsoluteFill>
-      <Img src={staticFile("slogan.webp")} style={{ position: "absolute", bottom: 250, right: 40, width: 330, transform: `rotate(-8deg) scale(${spring({ frame: f - 18, fps })})` }} />
+      {/* Dr. Dürüm himself gives the thumbs up. */}
+      <Img src={staticFile("dr-durum-rene.webp")} style={{ position: "absolute", left: -30, bottom: -40, width: 560, filter: "drop-shadow(10px 10px 0 #000)",
+        transform: `translateY(${interpolate(rene, [0, 1], [900, 0])}px) rotate(${interpolate(rene, [0, 1], [-14, -4])}deg)` }} />
+      <Img src={staticFile("slogan.webp")} style={{ position: "absolute", bottom: 330, right: 30, width: 330, transform: `rotate(-8deg) scale(${spring({ frame: f - 20, fps })})` }} />
+      <div style={{ position: "absolute", bottom: 220, right: 40, width: 460, textAlign: "right", fontFamily: BITTER, fontWeight: 800, fontSize: 34, lineHeight: 1.2,
+        opacity: interpolate(f, [22, 34], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }) }}>
+        Lavet med kebab-kærlighed af jinjrstudio.com
+      </div>
     </AbsoluteFill>
   );
 };
