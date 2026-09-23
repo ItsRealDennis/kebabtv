@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  AbsoluteFill, Img, Sequence, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig, Easing,
+  AbsoluteFill, Img, OffthreadVideo, Sequence, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig, Easing,
 } from "remotion";
 import { Audio } from "@remotion/media";
 import { loadFont as loadAnton } from "@remotion/google-fonts/Anton";
@@ -79,8 +79,12 @@ const Hook: React.FC = () => {
   const s = shakeAt(f, T.hookWords, 30);
   return (
     <AbsoluteFill>
-      <Halftone />
-      <AbsoluteFill style={{ transform: `translate(${s.x}px, ${s.y}px)`, justifyContent: "center", alignItems: "center", gap: 18, paddingBottom: 120 }}>
+      {/* AI slow-motion dürüm (Higgsfield / Seedance) as the thumb-stopper background. */}
+      <AbsoluteFill style={{ transform: `scale(${interpolate(f, [0, 60], [1.12, 1.0])})` }}>
+        <OffthreadVideo src={staticFile("ai-durum.mp4")} muted playbackRate={1.7} trimBefore={10} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+      </AbsoluteFill>
+      <AbsoluteFill style={{ background: "radial-gradient(120% 70% at 50% 45%, transparent 35%, rgba(0,0,0,.45))" }} />
+      <AbsoluteFill style={{ transform: `translate(${s.x}px, ${s.y}px)`, justifyContent: "flex-start", alignItems: "center", gap: 18, paddingTop: 360 }}>
         {words.map((w, i) => {
           const start = T.hookWords[i];
           const p = spring({ frame: f - start, fps, config: { damping: 11, stiffness: 180 } });
@@ -93,8 +97,6 @@ const Hook: React.FC = () => {
       </AbsoluteFill>
       <Img src={staticFile("logo.jpg")} style={{ position: "absolute", top: 110, left: "50%", width: 170, marginLeft: -85, borderRadius: "50%", clipPath: "circle(49%)",
         transform: `rotate(${interpolate(f, [0, 60], [-20, 6])}deg)` }} />
-      <Img src={staticFile("durum.webp")} style={{ position: "absolute", bottom: 260, right: -40, width: 420, filter: "drop-shadow(10px 10px 0 #000)",
-        transform: `rotate(${-18 + Math.sin(f / 5) * 6}deg) translateY(${interpolate(spring({ frame: f - 40, fps }), [0, 1], [600, 0])}px)` }} />
       {f < 9 && <Snow />}
     </AbsoluteFill>
   );
@@ -168,13 +170,13 @@ const Phone: React.FC = () => {
 const MapScene: React.FC = () => {
   const f = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const zoom = interpolate(f, [0, 90], [1.0, 1.35]);
+  const zoom = interpolate(f, [0, 45], [1.0, 1.3]);
   const pins = [[260, 760], [640, 640], [470, 980], [800, 1120], [330, 1240]];
   return (
     <AbsoluteFill style={{ background: "#000" }}>
       <Img src={staticFile("map-mobile.png")} style={{ position: "absolute", inset: 0, width: 1080, height: 1920, objectFit: "cover", transform: `scale(${zoom})`, transformOrigin: "55% 40%" }} />
       {pins.map(([x, y], i) => {
-        const p = spring({ frame: f - 8 - i * 7, fps, config: { damping: 8, stiffness: 200 } });
+        const p = spring({ frame: f - 4 - i * 4, fps, config: { damping: 8, stiffness: 220 } });
         return <Img key={i} src={staticFile("pin.webp")} style={{ position: "absolute", left: x, top: y, width: 150,
           transform: `translateY(${interpolate(p, [0, 1], [-1200, 0])}px)`, filter: "drop-shadow(6px 6px 0 #000)" }} />;
       })}
@@ -184,6 +186,36 @@ const MapScene: React.FC = () => {
           {D.places} steder, farvet efter karakter
         </div>
       </div>
+    </AbsoluteFill>
+  );
+};
+
+/** Suspense beat before the top 3: AI shawarma spit, graded into the channel's yellow/red, TV look. */
+const Drumroll: React.FC = () => {
+  const f = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const words = ["OG", "VINDEREN", "ER…"];
+  const s = shakeAt(f, [6, 18, 30], 14);
+  return (
+    <AbsoluteFill style={{ background: "#000" }}>
+      <AbsoluteFill style={{ transform: `scale(${interpolate(f, [0, 45], [1.05, 1.2])})` }}>
+        <OffthreadVideo src={staticFile("ai-spit.mp4")} muted trimBefore={15} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+      </AbsoluteFill>
+      {/* brand grade: yellow → oxblood wash, scanlines, vignette */}
+      <AbsoluteFill style={{ background: `linear-gradient(180deg, rgba(243,220,7,.28), rgba(201,49,24,.18) 55%, rgba(115,10,3,.45))`, mixBlendMode: "multiply" }} />
+      <AbsoluteFill style={{ background: "repeating-linear-gradient(0deg, rgba(0,0,0,.22) 0 3px, transparent 3px 7px), radial-gradient(120% 80% at 50% 45%, transparent 45%, rgba(0,0,0,.6))" }} />
+      <div style={{ position: "absolute", top: 70, left: 60, display: "flex", alignItems: "center", gap: 16, fontFamily: ANTON, fontSize: 52, color: C.paper, textShadow: "3px 3px 0 #000" }}>
+        <span style={{ width: 30, height: 30, borderRadius: "50%", background: "#ff2a1a", opacity: f % 20 < 12 ? 1 : 0.25, boxShadow: "0 0 14px #ff2a1a" }} /> LIVE
+      </div>
+      <Img src={staticFile("logo.jpg")} style={{ position: "absolute", top: 50, right: 50, width: 140, borderRadius: "50%", clipPath: "circle(49%)" }} />
+      <AbsoluteFill style={{ transform: `translate(${s.x}px, ${s.y}px)`, justifyContent: "center", alignItems: "center", gap: 10, paddingBottom: 160 }}>
+        {words.map((w, i) => {
+          const start = 6 + i * 12;
+          const p = spring({ frame: f - start, fps, config: { damping: 10, stiffness: 200 } });
+          return <div key={w} style={{ ...shout(i === 1 ? 190 : 150, i === 2 ? { color: C.yellow } : {}), opacity: f >= start ? 1 : 0,
+            transform: `scale(${interpolate(p, [0, 1], [2.8, 1])}) rotate(${i % 2 ? 3 : -3}deg)` }}>{w}</div>;
+        })}
+      </AbsoluteFill>
     </AbsoluteFill>
   );
 };
@@ -261,11 +293,12 @@ export const Promo: React.FC = () => (
     <Sequence durationInFrames={T.zapStart}><Hook /></Sequence>
     <Sequence from={T.zapStart} durationInFrames={T.phoneStart - T.zapStart}><Zap /></Sequence>
     <Sequence from={T.phoneStart} durationInFrames={T.mapStart - T.phoneStart}><Phone /></Sequence>
-    <Sequence from={T.mapStart} durationInFrames={T.topStart - T.mapStart}><MapScene /></Sequence>
+    <Sequence from={T.mapStart} durationInFrames={T.drumStart - T.mapStart}><MapScene /></Sequence>
+    <Sequence from={T.drumStart} durationInFrames={T.topStart - T.drumStart}><Drumroll /></Sequence>
     <Sequence from={T.topStart} durationInFrames={T.endStart - T.topStart}><Top3 /></Sequence>
     <Sequence from={T.endStart}><End /></Sequence>
     {/* short static flash on every scene cut */}
-    {[T.zapStart, T.phoneStart, T.mapStart, T.topStart, T.endStart].map((c) => (
+    {[T.zapStart, T.phoneStart, T.mapStart, T.drumStart, T.topStart, T.endStart].map((c) => (
       <Sequence key={c} from={c} durationInFrames={4}><Snow opacity={0.85} /></Sequence>
     ))}
     <Progress />

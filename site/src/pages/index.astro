@@ -86,7 +86,7 @@ const first = chans[0];
       <p>Over 8 er en <b>dum dürüm</b>: godkendt af KebabTV.</p>
       <a class="meet__cta" href="/hitlisten#nyeste"><img src="/assets/btn-seneste.webp" alt="Seneste anmeldelser" width="360" height="117" loading="lazy" /></a>
     </div>
-    <img class="meet__sticker" src="/assets/logo-sticker.webp" alt="" width="260" height="256" loading="lazy" />
+    <img class="meet__stamp" src="/assets/stamp-dum-durum.webp" alt="Dum dürüm: over 8, godkendt af KebabTV" width="240" height="233" loading="lazy" />
   </section>
 
   <section class="guide wrap" aria-labelledby="guide-h">
@@ -301,15 +301,14 @@ const first = chans[0];
   @keyframes tick { to { transform: translateX(-50%); } }
 
   /* ---------- Meet ---------- */
-  .meet { position: relative; display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 40px; align-items: center; padding: 64px 0 24px; overflow: hidden; }
+  .meet { position: relative; display: grid; grid-template-columns: 300px minmax(0, 1fr) auto; gap: 40px; align-items: center; padding: 64px 0 24px; }
   .meet__photo { width: 300px; height: auto; filter: drop-shadow(6px 6px 0 #000); }
   .meet__text h2 { font-size: var(--t-6); margin-bottom: 16px; }
   .meet__text p { font-size: var(--t-2); max-width: 46ch; margin: 0 0 12px; }
   .meet__cta { display: inline-block; line-height: 0; margin-top: 10px; transition: transform .15s; }
   .meet__cta img { width: 360px; height: auto; }
   .meet__cta:hover { transform: rotate(-2deg) scale(1.03); }
-  /* Logo sticker peeks in from the corner; its bottom text stays out of frame. */
-  .meet__sticker { position: absolute; right: -40px; bottom: -150px; width: 260px; height: auto; rotate: 16deg; opacity: .95; pointer-events: none; }
+  .meet__stamp { width: 240px; height: auto; rotate: 12deg; filter: drop-shadow(6px 6px 0 #000); align-self: end; margin-bottom: 10px; }
 
   /* ---------- Guide ---------- */
   .guide { padding-top: 56px; }
@@ -344,7 +343,7 @@ const first = chans[0];
     .meet__photo { width: 200px; }
     .meet__text h2 { font-size: var(--t-5); }
     .meet__cta img { width: 280px; }
-    .meet__sticker { width: 160px; bottom: -90px; right: -30px; }
+    .meet__stamp { position: absolute; right: 0; top: 56px; width: 130px; margin: 0; }
   }
 
   /* ---------- Phones ---------- */
@@ -376,8 +375,7 @@ const first = chans[0];
     .meet { padding-top: 40px; }
     .meet__text h2 { font-size: 2.4rem; }
     .meet__text p { font-size: 1.05rem; }
-    .meet__sticker { display: none; }   /* half-clipped sticker reads as a bug on small screens */
-    .meet { overflow: visible; padding-bottom: 8px; }
+    .meet { padding-bottom: 8px; }
     .meet__cta { display: block; margin-top: 16px; }
     .meet__cta img { width: min(100%, 360px); }
 

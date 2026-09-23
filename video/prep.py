@@ -47,14 +47,18 @@ data = {
         "verdict": videos[p["latest"]]["review"].get("verdict_short") or "",
     } for p in top3],
 }
-(ROOT / "src" / "data.json").write_text(json.dumps(data, ensure_ascii=False, indent=1), "utf-8")
+# Keep sizes recorded for the sharp screenshots from earlier runs.
+_old = ROOT / "src" / "data.json"
+if _old.exists():
+    for k, v in json.loads(_old.read_text("utf-8")).items():
+        if k.endswith("Size"):
+            data[k] = v
+_old.write_text(json.dumps(data, ensure_ascii=False, indent=1), "utf-8")
 
 for f in ["durum.webp", "stamp-dum-durum.webp", "pin.webp", "slogan.webp"]:
     shutil.copy(SITE / "public/assets" / f, PUB / f)
 shutil.copy(SITE / "public/logo.jpg", PUB / "logo.jpg")
-shutil.copy(ROOT.parent / ".playwright-mcp/video-hitlist-full.png", PUB / "hitlist-full.png")
-shutil.copy(ROOT.parent / "screenshots/04-kortet.png", PUB / "map.png")
-shutil.copy(ROOT.parent / "screenshots/08-mobil-anmeldelse.png", PUB / "review-mobile.png")
+# Sharp phone screenshots (hitlist-full.png, map-mobile.png) are captured separately; never overwrite them.
 
 # ---------- soundtrack ----------
 SR = 44100
@@ -146,6 +150,12 @@ for k in range(T["zapCount"]):
 
 for f in (T["phoneStart"], T["mapStart"], T["topStart"]):
     add(whoosh(), f - 8, 0.9)
+# Drum roll that speeds up into the top-3 reveal.
+f = T["drumStart"]; gap = 6.0
+while f < T["topStart"] - 1:
+    add(snare(), f, 0.35 + 0.4 * (f - T["drumStart"]) / (T["topStart"] - T["drumStart"]))
+    f += gap; gap = max(1.5, gap * 0.86)
+add(whoosh(0.6), T["drumStart"] - 6, 0.8)
 for k, f in enumerate(T["topHits"]):
     add(boom(), f, 0.7 + 0.2 * k)
 add(boom(), T["stampAt"], 1.2); add(snare(), T["stampAt"], 0.8)

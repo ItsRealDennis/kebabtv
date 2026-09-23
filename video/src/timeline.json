@@ -1,14 +1,23 @@
 {
   "fps": 30,
   "total": 600,
-  "hookWords": [8, 22, 36],
+  "hookWords": [
+    8,
+    22,
+    36
+  ],
   "zapStart": 60,
   "zapEvery": 9,
   "zapCount": 14,
   "phoneStart": 195,
   "mapStart": 315,
   "topStart": 405,
-  "topHits": [405, 445, 485],
+  "topHits": [
+    405,
+    445,
+    485
+  ],
   "stampAt": 505,
-  "endStart": 540
+  "endStart": 540,
+  "drumStart": 360
 }
