@@ -161,9 +161,25 @@ const ranked = [...rows].sort((a, b) => (b.score ?? -1) - (a.score ?? -1));
   .row:first-child .row__rank { background: var(--red); color: #fff; box-shadow: 3px 3px 0 #000; }
   .empty { font-size: var(--t-2); }
 
+  @media (max-width: 760px) {
+    .head { padding: 22px 0 8px; }
+    h1 { font-size: 3.4rem; }
+    .titlerow { gap: 10px; justify-content: space-between; }
+    .badge { width: 92px; }
+    .lede { font-size: 1rem; margin: 10px 0 16px; }
+    /* One swipeable row each for chips and sorting, instead of wrapping blocks. */
+    .chips, .sorts { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-inline: -16px; padding: 4px 16px 8px; scroll-snap-type: x proximity; }
+    .chips::-webkit-scrollbar, .sorts::-webkit-scrollbar { display: none; }
+    .chips { margin-bottom: 8px; }
+    .chip { flex: none; scroll-snap-align: start; }
+    .chip img { height: 44px; }
+    .tools { gap: 8px; flex-direction: column; align-items: stretch; }
+    .search { flex: none; }
+    .search input { width: 100%; font-size: 1rem; padding: 12px 16px; }
+    .sorts .btn { flex: none; font-size: .95rem; }
+    .list { gap: 18px; padding-top: 8px; }
+  }
   @media (max-width: 640px) {
-    .badge { width: 96px; }
-    .chip img { height: 42px; }
     .row__a { grid-template-columns: 44px minmax(0, 1fr) 58px; gap: 8px; }
     .row__rank { width: 42px; height: 42px; font-size: var(--t-2); }
     .row__thumb { display: none; }

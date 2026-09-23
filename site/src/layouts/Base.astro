@@ -4,12 +4,13 @@ import "../styles/global.css";
 interface Props { title?: string; description?: string; channel?: number; bodyClass?: string }
 const { title, description = "Alle KebabTV's anmeldelser samlet: karakterer, kort, citater og hvad seerne mener.", channel, bodyClass = "" } = Astro.props;
 const channels = [
-  { n: 1, href: "/", label: "Kanalen" },
-  { n: 2, href: "/hitlisten", label: "Hitlisten" },
-  { n: 3, href: "/kortet", label: "Kortet" },
-  { n: 4, href: "/oensker", label: "Seernes ønsker" },
-  { n: 5, href: "/tekst-tv", label: "Tekst-TV" },
+  { n: 1, href: "/", label: "Kanalen", short: "Kanal" },
+  { n: 2, href: "/hitlisten", label: "Hitlisten", short: "Hitliste" },
+  { n: 3, href: "/kortet", label: "Kortet", short: "Kort" },
+  { n: 4, href: "/oensker", label: "Seernes ønsker", short: "Ønsker" },
+  { n: 5, href: "/tekst-tv", label: "Tekst-TV", short: "Tekst-TV" },
 ];
+const current = channels.find((c) => c.n === channel);
 ---
 <!doctype html>
 <html lang="da">
@@ -38,6 +39,7 @@ const channels = [
         <a class="brand" href="/" aria-label="KebabTV forside">
           <img class="logo" src="/logo.jpg" alt="KebabTV" width="64" height="64" />
         </a>
+        <p class="mobtitle" aria-hidden="true"><span>KAN {current?.n ?? "–"}</span> {current?.label ?? "KebabTV"}</p>
         <nav aria-label="Kanaler">
           <ol class="chans">
             {channels.map((c) => (
@@ -53,6 +55,15 @@ const channels = [
       </div>
     </header>
     <main id="main"><slot /></main>
+    <!-- Phones: channels as a thumb-reachable bar at the bottom. -->
+    <nav class="tabbar" aria-label="Kanaler">
+      {channels.map((c) => (
+        <a href={c.href} class="tab" aria-current={channel === c.n ? "page" : undefined}>
+          <span class="tab__n" aria-hidden="true">{c.n}</span>
+          <span class="tab__l">{c.short}</span>
+        </a>
+      ))}
+    </nav>
     <footer class="foot wrap">
       <img class="slogan" src="/assets/slogan.webp" alt="God kebab, bedre humør" width="280" height="216" />
       <div class="foot__text">
@@ -95,13 +106,27 @@ const channels = [
   .credit a { background: var(--ink); color: var(--yellow); text-decoration: none; padding: 1px 10px 2px; border-radius: 999px; }
   .credit a:hover { background: var(--red); color: var(--paper); }
   .slogan { width: 220px; height: auto; flex: none; rotate: -4deg; }
+  .mobtitle, .tabbar { display: none; }
   @media (max-width: 760px) {
-    .top__in { gap: 10px; min-height: 64px; }
-    .brand { margin-bottom: -10px; }
-    .logo { width: 50px; height: 50px; }
-    .chan__l { display: none; }
+    .top__in { gap: 12px; min-height: 58px; }
+    .brand { margin: 4px 0 -12px; }
+    .logo { width: 48px; height: 48px; }
+    .top nav { display: none; }
+    .mobtitle { display: block; margin: 0; color: var(--paper); font-family: var(--display); font-size: 1.25rem; letter-spacing: .02em;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .mobtitle span { color: #7CFF5B; text-shadow: 0 0 6px rgba(124,255,91,.6); margin-right: 6px; }
     .foot { flex-direction: column; align-items: flex-start; }
     .slogan { width: 170px; }
-    .chan[aria-current="page"] .chan__l { display: inline; }
+    :global(body) { padding-bottom: calc(72px + env(safe-area-inset-bottom)); }
+    /* Channels as a thumb-reachable bar at the bottom. */
+    .tabbar { display: grid; grid-template-columns: repeat(5, 1fr); position: fixed; inset: auto 0 0 0; z-index: 40;
+      background: var(--ink); border-top: 4px solid var(--red); padding: 6px 4px calc(6px + env(safe-area-inset-bottom)); }
+    .tab { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; min-height: 52px;
+      text-decoration: none; color: #ddd; font-family: var(--display); font-size: .78rem; letter-spacing: .02em; border-radius: 10px; }
+    .tab__n { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: #222; color: var(--yellow);
+      border: 2px solid #444; font-size: .95rem; }
+    .tab[aria-current="page"] { color: var(--yellow); }
+    .tab[aria-current="page"] .tab__n { background: var(--yellow); color: var(--ink); border-color: var(--yellow); box-shadow: 0 0 0 3px rgba(243,220,7,.25); }
+    .tab:active .tab__n { transform: translateY(2px); }
   }
 </style>

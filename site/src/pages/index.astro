@@ -55,11 +55,11 @@ const first = chans[0];
       </div>
       <div class="remote__pad">
         {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((n) => <button class="rk rk--n" type="button" data-n={n}>{n}</button>)}
-        <button class="rk rk--n rk--rand" type="button" id="btn-rand" aria-label="Tilfældig kanal">?</button>
+        <button class="rk rk--n rk--rand" type="button" id="btn-rand" aria-label="Tilfældig kanal">?<span class="mob-l">Tilfældig</span></button>
         <button class="rk rk--n" type="button" data-n="0">0</button>
-        <a class="rk rk--n rk--info" id="btn-info" href={first?.place ? `/sted/${first.place}` : "#"} aria-label="Læs anmeldelsen">i</a>
+        <a class="rk rk--n rk--info" id="btn-info" href={first?.place ? `/sted/${first.place}` : "#"} aria-label="Læs anmeldelsen">i<span class="mob-l">Læs anmeldelsen</span></a>
       </div>
-      <p class="remote__hint">Tast et afsnitsnummer, eller brug piletasterne. Enter afspiller.</p>
+      <p class="remote__hint"><span class="hint-desk">Tast et afsnitsnummer, eller brug piletasterne. Enter afspiller.</span><span class="hint-mob">Swipe på skærmen for at zappe. Tryk for at se afsnittet.</span></p>
     </div>
   </section>
 
@@ -93,7 +93,7 @@ const first = chans[0];
     <h2 id="guide-h" class="shout guide__h">Programoversigt</h2>
     {[...byYear].map(([year, list]) => (
       <div class="guide__year">
-        <h3 class="guide__y">{year}</h3>
+        <h3 class="guide__y"><button type="button" class="guide__toggle" aria-expanded="true">{year}<span class="guide__count">{list.length} afsnit</span></button></h3>
         <ol class="guide__list">
           {list.map((v) => (
             <li>
@@ -206,6 +206,25 @@ const first = chans[0];
     else if (e.key === "Escape") stop();
   });
 
+  // Phones: swipe the screen to zap, tap to play.
+  const screen = document.getElementById("screen");
+  let sx = 0, sy = 0;
+  screen?.addEventListener("touchstart", (e) => { sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, { passive: true });
+  screen?.addEventListener("touchend", (e) => {
+    if (screen.classList.contains("playing")) return;
+    const dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) tune(dx < 0 ? idx - 1 : idx + 1);
+    else if (Math.abs(dx) < 10 && Math.abs(dy) < 10) play();
+  });
+
+  // Phones: fold the programme guide by year, newest open.
+  const phone = matchMedia("(max-width: 760px)");
+  document.querySelectorAll<HTMLButtonElement>(".guide__toggle").forEach((b, i) => {
+    const set = (open: boolean) => { b.setAttribute("aria-expanded", String(open)); b.closest(".guide__year")!.classList.toggle("is-closed", !open); };
+    if (phone.matches && i > 0) set(false);
+    b.addEventListener("click", () => { if (phone.matches) set(b.getAttribute("aria-expanded") !== "true"); });
+  });
+
   const start = byEp.get(Number(location.hash.slice(1)));
   if (start != null && start !== 0) tune(start);
 </script>
@@ -296,7 +315,9 @@ const first = chans[0];
   .guide { padding-top: 56px; }
   .guide__h { font-size: var(--t-6); margin-bottom: 24px; }
   .guide__year { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 24px; border-top: var(--line); padding: 18px 0; }
-  .guide__y { font-family: var(--display); font-size: var(--t-5); margin: 0; line-height: 1; }
+  .guide__y { font-family: var(--display); font-size: var(--t-5); margin: 0; line-height: 1; font-weight: 400; }
+  .guide__toggle { all: unset; cursor: default; }
+  .guide__count, .mob-l, .hint-mob { display: none; }
   .guide__list { list-style: none; margin: 0; padding: 0; columns: 2 340px; column-gap: 32px; }
   .guide__list li { break-inside: avoid; }
   .gl { display: grid; grid-template-columns: 3.2em minmax(0, 1fr) auto; grid-template-rows: auto auto; column-gap: 12px;
@@ -324,5 +345,48 @@ const first = chans[0];
     .meet__text h2 { font-size: var(--t-5); }
     .meet__cta img { width: 280px; }
     .meet__sticker { width: 160px; bottom: -90px; right: -30px; }
+  }
+
+  /* ---------- Phones ---------- */
+  @media (max-width: 760px) {
+    .stage { padding: 16px 0 24px; gap: 18px; }
+    .tv { padding: 10px 10px 0; border-radius: 20px; box-shadow: inset 0 0 0 4px #2c2c2c, 6px 6px 0 var(--ink); }
+    .tv__screen { border-radius: 16px / 22px; touch-action: pan-y; }
+    .tv__chin { height: 40px; gap: 8px; }
+    .tv__now b { font-size: 1.1rem; }
+    .tv__knob { width: 22px; height: 22px; }
+
+    /* Compact remote: CH- / play / CH+, then random + read. Number pad hidden. */
+    .remote { grid-template-columns: 1fr auto 1fr; grid-template-areas: "prev ok next" "rand info info" "hint hint hint";
+      gap: 10px; padding: 14px; border-radius: 22px; }
+    .remote__row, .remote__pad { display: contents; }
+    #btn-prev { grid-area: prev; } #btn-next { grid-area: next; }
+    #btn-rand { grid-area: rand; } #btn-info { grid-area: info; }
+    .rk--ok { width: 66px; height: 66px; }
+    .remote__row .rk { font-size: 1.05rem; min-height: 50px; }
+    .rk--n[data-n] { display: none; }
+    .rk--rand, .rk--info { aspect-ratio: auto; height: 46px; border-radius: 999px; display: flex; gap: 8px; justify-content: center; font-size: 1rem; }
+    .rk--info { font-family: var(--display); font-style: normal; background: var(--yellow); }
+    .mob-l { display: inline; font-family: var(--display); font-style: normal; font-weight: 400; white-space: nowrap; }
+    .hint-desk { display: none; }
+    .hint-mob { display: inline; }
+
+    .ticker span { padding: 8px 18px; font-size: .9rem; }
+
+    .meet { padding-top: 40px; }
+    .meet__text h2 { font-size: 2.4rem; }
+    .meet__text p { font-size: 1.05rem; }
+
+    .guide { padding-top: 40px; }
+    .guide__h { font-size: 2.6rem; margin-bottom: 12px; }
+    .guide__year { padding: 0; gap: 0; }
+    .guide__toggle { cursor: pointer; display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 14px 0; box-sizing: border-box; }
+    .guide__toggle::after { content: "−"; font-size: 1.8rem; width: 40px; height: 40px; border-radius: 50%; border: 3px solid #000; display: grid; place-items: center; background: var(--paper); }
+    .is-closed .guide__toggle::after { content: "+"; background: var(--yellow); }
+    .guide__count { display: inline; font-family: var(--serif); font-size: .9rem; margin-left: 10px; margin-right: auto; opacity: .7; }
+    .guide__toggle:focus-visible { outline: 4px solid var(--red); outline-offset: 2px; }
+    .is-closed .guide__list { display: none; }
+    .guide__list { padding-bottom: 12px; }
+    .gl { padding: 10px 0; }
   }
 </style>

@@ -264,4 +264,29 @@ const verdictWord = vw?.agrees_with_rating === true ? "Seerne er enige" : vw?.ag
     .body { grid-template-columns: 1fr; }
     .pc { grid-template-columns: 1fr; }
   }
+  /* Phones: name full width, then score + dum dürüm side by side. */
+  @media (max-width: 760px) {
+    .hero { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 14px 18px; padding: 26px 0 22px; }
+    .hero :global(.lt) { flex: 1 1 100%; --lt-d: 104px; --lt-f: clamp(1.9rem, 9vw, 2.6rem); }
+    .hero :global(.lt__sub) { font-size: .95rem; margin-top: .6rem; }
+    .hero :global(.lt__durum img) { width: 74px; height: auto; }
+    .hero :global(.lt__durum) { left: -4px; translate: 0 -58%; }
+    .stamp { position: static; width: 96px; height: 96px; rotate: -6deg; outline-offset: -11px; border-width: 5px; }
+    .stamp__v { font-size: 2.3rem; }
+    .stamp__of { font-size: .68rem; }
+    .dd { position: static; width: 98px; margin: 0; rotate: 8deg; align-self: center; }
+    .body { gap: 28px; }
+    .player { border-radius: 14px; box-shadow: 4px 4px 0 #000; }
+    .player__btn { width: 72px; height: 72px; font-size: 1.8rem; }
+    .verdict { font-size: 1.7rem; margin-top: 24px; }
+    .summary { font-size: 1.05rem; }
+    .block { margin-top: 32px; }
+    .h2 { font-size: 1.7rem; }
+    .quote { padding: 12px 14px; gap: 4px 10px; }
+    .quote__text { font-size: 1.05rem; }
+    .facts { grid-template-columns: 1fr; gap: 2px; box-shadow: 4px 4px 0 #000; }
+    .facts dt { padding-top: 8px; }
+    .bubble figcaption { position: static; margin-top: 18px; }
+    .crowd .h3 { margin-top: 24px; }
+  }
 </style>
